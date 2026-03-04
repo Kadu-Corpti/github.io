@@ -3,286 +3,810 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Carlos Eduardo — Analista de Suporte &amp; Desenvolvedor</title>
-  <meta name="description" content="Portfólio de Carlos Eduardo Costa Coelho — Suporte técnico, infraestrutura de redes e desenvolvimento de sistemas.">
+  <title>Carlos Eduardo Costa Coelho — Portfólio</title>
+  <meta name="description" content="Portfólio profissional de Carlos Eduardo Costa Coelho — Suporte, Infraestrutura, Desenvolvimento e IA.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@300;400;500;600;700;800&family=Sora:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
     :root {
-      --bg-primary: #0a0a0f; --bg-card: #111119; --bg-card-hover: #16161f;
-      --border: #1e1e2e; --border-glow: #00e0a040;
-      --text-primary: #e8e8ed; --text-secondary: #8888a0; --text-muted: #55556a;
-      --accent: #00e0a0; --accent-dim: #00c08a; --accent-glow: #00e0a018;
-      --accent-blue: #4488ff; --accent-orange: #ff8844; --accent-purple: #9966ff;
-      --font-display: 'Outfit', sans-serif; --font-mono: 'JetBrains Mono', monospace;
-      --radius: 12px; --radius-sm: 8px;
+      --bg: #06060b;
+      --bg-card: #0d0d15;
+      --bg-card-hover: #12121c;
+      --bg-elevated: #161622;
+      --border: #1a1a2e;
+      --border-hover: #2a2a44;
+      --text: #eaeaf0;
+      --text-secondary: #9494b0;
+      --text-muted: #5c5c78;
+      --accent: #00f0b5;
+      --accent-glow: #00f0b520;
+      --accent2: #5b8aff;
+      --accent3: #a78bfa;
+      --accent4: #f97316;
+      --accent5: #f43f5e;
+      --font-body: 'Sora', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --radius: 14px;
+      --radius-sm: 8px;
     }
+
     html { scroll-behavior: smooth; }
-    body { font-family: var(--font-display); background: var(--bg-primary); color: var(--text-primary); line-height: 1.6; overflow-x: hidden; }
-    ::selection { background: var(--accent); color: var(--bg-primary); }
-    body::before { content: ''; position: fixed; inset: 0; background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px); background-size: 60px 60px; opacity: 0.25; pointer-events: none; z-index: 0; }
-    body::after { content: ''; position: fixed; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(ellipse at 30% 20%, #00e0a008 0%, transparent 50%), radial-gradient(ellipse at 70% 80%, #4488ff06 0%, transparent 50%); pointer-events: none; z-index: 0; }
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
-    section { padding: 80px 0; }
 
-    /* NAV */
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: #0a0a0fdd; backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); transition: box-shadow 0.3s; }
-    nav.scrolled { box-shadow: 0 4px 30px #00000060; }
-    .nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 64px; }
-    .nav-logo { font-family: var(--font-mono); font-size: 0.85rem; font-weight: 700; color: var(--accent); letter-spacing: 0.05em; }
-    .nav-logo span { color: var(--text-muted); }
-    .nav-links { display: flex; gap: 8px; }
-    .nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 0.82rem; font-weight: 500; padding: 6px 14px; border-radius: 6px; transition: all 0.2s; letter-spacing: 0.02em; }
-    .nav-links a:hover { color: var(--accent); background: var(--accent-glow); }
+    body {
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
 
-    /* HERO */
-    .hero { min-height: 100vh; display: flex; align-items: center; padding-top: 64px; }
-    .hero-tag { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); background: var(--accent-glow); border: 1px solid var(--border-glow); padding: 6px 16px; border-radius: 100px; margin-bottom: 28px; letter-spacing: 0.06em; text-transform: uppercase; animation: fadeInUp 0.6s ease both; }
-    .hero-tag .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); animation: pulse 2s infinite; }
-    .hero h1 { font-size: clamp(2.8rem, 7vw, 5rem); font-weight: 800; line-height: 1.05; letter-spacing: -0.03em; margin-bottom: 20px; animation: fadeInUp 0.6s ease 0.1s both; }
-    .hero h1 .highlight { background: linear-gradient(135deg, var(--accent), var(--accent-blue)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-    .hero-description { font-size: 1.1rem; color: var(--text-secondary); max-width: 560px; line-height: 1.7; margin-bottom: 36px; font-weight: 300; animation: fadeInUp 0.6s ease 0.2s both; }
-    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; animation: fadeInUp 0.6s ease 0.3s both; }
-    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 28px; border-radius: var(--radius-sm); font-family: var(--font-display); font-size: 0.88rem; font-weight: 600; text-decoration: none; transition: all 0.25s; cursor: pointer; border: none; }
-    .btn-primary { background: var(--accent); color: var(--bg-primary); }
-    .btn-primary:hover { background: #00ffb8; box-shadow: 0 0 30px #00e0a035; transform: translateY(-2px); }
-    .btn-ghost { background: transparent; color: var(--text-secondary); border: 1px solid var(--border); }
-    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
-    .hero-stats { display: flex; gap: 40px; margin-top: 60px; padding-top: 40px; border-top: 1px solid var(--border); animation: fadeInUp 0.6s ease 0.4s both; }
-    .stat-item .stat-value { font-family: var(--font-mono); font-size: 1.6rem; font-weight: 700; color: var(--accent); }
-    .stat-item .stat-label { font-size: 0.78rem; color: var(--text-muted); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.08em; }
+    ::selection { background: var(--accent); color: var(--bg); }
 
-    /* SECTION HEADERS */
-    .section-header { margin-bottom: 48px; }
-    .section-label { font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 12px; }
-    .section-title { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 700; letter-spacing: -0.02em; }
+    /* ── SCROLL PROGRESS ── */
+    .scroll-progress {
+      position: fixed; top: 0; left: 0; height: 3px; z-index: 200;
+      background: linear-gradient(90deg, var(--accent), var(--accent2), var(--accent3));
+      width: 0%; transition: width 0.1s;
+    }
 
-    /* ABOUT */
-    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-    .about-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px; transition: all 0.3s; }
-    .about-card:hover { border-color: var(--border-glow); background: var(--bg-card-hover); transform: translateY(-3px); }
-    .about-card .card-icon { width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; margin-bottom: 20px; }
-    .icon-green { background: #00e0a015; border: 1px solid #00e0a030; }
-    .icon-blue { background: #4488ff15; border: 1px solid #4488ff30; }
-    .icon-orange { background: #ff884415; border: 1px solid #ff884430; }
-    .icon-purple { background: #9966ff15; border: 1px solid #9966ff30; }
-    .about-card h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: 10px; }
-    .about-card p { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.65; }
-    .about-card .card-tag { display: inline-block; font-family: var(--font-mono); font-size: 0.68rem; color: var(--accent); background: var(--accent-glow); border: 1px solid var(--border-glow); padding: 3px 10px; border-radius: 4px; margin-top: 14px; text-transform: uppercase; letter-spacing: 0.06em; }
+    /* ── BACKGROUND ── */
+    .bg-grid {
+      position: fixed; inset: 0; pointer-events: none; z-index: 0;
+      background-image:
+        radial-gradient(circle at 1px 1px, #ffffff06 1px, transparent 0);
+      background-size: 40px 40px;
+    }
 
-    /* TIMELINE */
-    .timeline { position: relative; padding-left: 32px; }
-    .timeline::before { content: ''; position: absolute; left: 0; top: 8px; bottom: 8px; width: 2px; background: linear-gradient(to bottom, var(--accent), var(--border)); }
-    .timeline-item { position: relative; margin-bottom: 40px; }
-    .timeline-item:last-child { margin-bottom: 0; }
-    .timeline-item::before { content: ''; position: absolute; left: -37px; top: 8px; width: 12px; height: 12px; border-radius: 50%; background: var(--bg-primary); border: 2px solid var(--accent); }
-    .timeline-item:first-child::before { background: var(--accent); box-shadow: 0 0 12px var(--accent); }
-    .timeline-date { font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px; }
-    .timeline-role { font-size: 1.1rem; font-weight: 600; margin-bottom: 4px; }
-    .timeline-company { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px; }
-    .timeline-desc { font-size: 0.86rem; color: var(--text-secondary); line-height: 1.7; }
-    .timeline-desc li { list-style: none; position: relative; padding-left: 16px; margin-bottom: 6px; }
-    .timeline-desc li::before { content: '›'; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+    .bg-glow {
+      position: fixed; pointer-events: none; z-index: 0;
+      width: 600px; height: 600px; border-radius: 50%;
+      filter: blur(120px); opacity: 0.07;
+    }
 
-    /* PROJECTS */
-    .project-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: all 0.3s; margin-bottom: 28px; }
-    .project-card:hover { border-color: var(--border-glow); transform: translateY(-4px); box-shadow: 0 20px 60px #00000040; }
-    .project-card.featured { border-color: var(--accent); background: linear-gradient(135deg, #0d1a15, #0f1420); }
-    .project-header { padding: 32px 32px 0; display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; }
-    .project-badge { font-family: var(--font-mono); font-size: 0.65rem; padding: 4px 10px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.08em; white-space: nowrap; font-weight: 600; }
-    .badge-live { background: #00e0a020; color: var(--accent); border: 1px solid #00e0a040; }
-    .badge-ai { background: #9966ff20; color: var(--accent-purple); border: 1px solid #9966ff40; }
-    .badge-dev { background: #4488ff20; color: var(--accent-blue); border: 1px solid #4488ff40; }
-    .project-body { padding: 20px 32px 28px; }
-    .project-body h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 10px; }
-    .project-body p { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 16px; }
-    .project-features { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
-    .feature-tag { font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-secondary); background: #ffffff08; border: 1px solid var(--border); padding: 5px 12px; border-radius: 6px; }
-    .project-tech { display: flex; flex-wrap: wrap; gap: 6px; padding-top: 16px; border-top: 1px solid var(--border); }
-    .tech-pill { font-family: var(--font-mono); font-size: 0.68rem; color: var(--accent); padding: 3px 10px; border-radius: 4px; background: var(--accent-glow); }
-    .tech-pill.blue { color: var(--accent-blue); background: #4488ff12; }
-    .tech-pill.orange { color: var(--accent-orange); background: #ff884412; }
-    .tech-pill.purple { color: var(--accent-purple); background: #9966ff12; }
+    .bg-glow-1 { top: -200px; left: -100px; background: var(--accent); }
+    .bg-glow-2 { bottom: -200px; right: -100px; background: var(--accent2); }
 
-    /* MOCKUP GALLERY */
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 28px; position: relative; z-index: 1; }
+    section { padding: 100px 0; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: #06060bcc; backdrop-filter: blur(24px) saturate(1.5);
+      border-bottom: 1px solid transparent;
+      transition: all 0.3s;
+    }
+    nav.scrolled { border-bottom-color: var(--border); }
+    .nav-inner {
+      max-width: 1100px; margin: 0 auto; padding: 0 28px;
+      display: flex; align-items: center; justify-content: space-between; height: 68px;
+    }
+    .nav-logo {
+      font-family: var(--font-mono); font-size: 0.82rem; font-weight: 700;
+      color: var(--accent); letter-spacing: 0.08em;
+    }
+    .nav-logo .dim { color: var(--text-muted); font-weight: 400; }
+    .nav-links { display: flex; gap: 6px; align-items: center; }
+    .nav-links a {
+      color: var(--text-muted); text-decoration: none; font-size: 0.8rem;
+      font-weight: 500; padding: 7px 14px; border-radius: 8px; transition: all 0.2s;
+    }
+    .nav-links a:hover { color: var(--text); background: #ffffff08; }
+    .nav-cmd {
+      display: flex; align-items: center; gap: 6px;
+      padding: 6px 12px; border: 1px solid var(--border); border-radius: 8px;
+      font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-muted);
+      cursor: pointer; transition: all 0.2s; background: transparent;
+    }
+    .nav-cmd:hover { border-color: var(--accent); color: var(--accent); }
+    .nav-cmd kbd {
+      background: #ffffff0a; padding: 1px 5px; border-radius: 3px;
+      font-size: 0.6rem; border: 1px solid #ffffff10;
+    }
+
+    /* ── COMMAND PALETTE ── */
+    .cmd-overlay {
+      position: fixed; inset: 0; z-index: 999; background: #000000aa;
+      backdrop-filter: blur(8px); display: none; align-items: flex-start;
+      justify-content: center; padding-top: 20vh;
+    }
+    .cmd-overlay.open { display: flex; }
+    .cmd-box {
+      width: 520px; max-width: 90vw; background: #0d0d18;
+      border: 1px solid var(--border-hover); border-radius: 16px;
+      box-shadow: 0 40px 100px #000000aa; overflow: hidden;
+      animation: cmdIn 0.2s ease;
+    }
+    @keyframes cmdIn { from { opacity: 0; transform: translateY(-10px) scale(0.98); } }
+    .cmd-input-wrap {
+      display: flex; align-items: center; gap: 10px;
+      padding: 16px 20px; border-bottom: 1px solid var(--border);
+    }
+    .cmd-input-wrap svg { color: var(--text-muted); flex-shrink: 0; }
+    .cmd-input {
+      flex: 1; background: transparent; border: none; outline: none;
+      font-family: var(--font-body); font-size: 0.95rem; color: var(--text);
+    }
+    .cmd-input::placeholder { color: var(--text-muted); }
+    .cmd-results { padding: 8px; max-height: 320px; overflow-y: auto; }
+    .cmd-item {
+      display: flex; align-items: center; gap: 12px;
+      padding: 10px 14px; border-radius: 10px; cursor: pointer; transition: all 0.15s;
+      text-decoration: none; color: var(--text);
+    }
+    .cmd-item:hover, .cmd-item.selected { background: #ffffff08; }
+    .cmd-item .cmd-icon {
+      width: 32px; height: 32px; border-radius: 8px;
+      display: flex; align-items: center; justify-content: center; font-size: 0.9rem;
+      background: #ffffff06; border: 1px solid #ffffff08;
+    }
+    .cmd-item .cmd-label { font-size: 0.85rem; font-weight: 500; }
+    .cmd-item .cmd-desc { font-size: 0.72rem; color: var(--text-muted); }
+    .cmd-footer {
+      padding: 10px 20px; border-top: 1px solid var(--border);
+      font-family: var(--font-mono); font-size: 0.62rem; color: var(--text-muted);
+      display: flex; gap: 16px;
+    }
+    .cmd-footer kbd { background: #ffffff0a; padding: 1px 5px; border-radius: 3px; border: 1px solid #ffffff10; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh; display: flex; align-items: center;
+      padding-top: 68px; position: relative;
+    }
+
+    .hero-grid {
+      display: grid; grid-template-columns: 1fr 420px; gap: 48px; align-items: center;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--font-mono); font-size: 0.72rem;
+      color: var(--accent); letter-spacing: 0.12em; text-transform: uppercase;
+      margin-bottom: 20px; display: flex; align-items: center; gap: 10px;
+      animation: fadeInUp 0.5s ease both;
+    }
+
+    .hero-eyebrow .line { width: 32px; height: 1px; background: var(--accent); }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 5.5vw, 3.8rem); font-weight: 800;
+      line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 20px;
+      animation: fadeInUp 0.5s ease 0.1s both;
+    }
+
+    .hero h1 .gradient {
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 50%, var(--accent3) 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+
+    .hero-sub {
+      font-size: 1.05rem; color: var(--text-secondary); max-width: 480px;
+      line-height: 1.75; font-weight: 300; margin-bottom: 32px;
+      animation: fadeInUp 0.5s ease 0.2s both;
+    }
+
+    .hero-sub strong { color: var(--text); font-weight: 600; }
+
+    .hero-actions {
+      display: flex; gap: 12px; flex-wrap: wrap;
+      animation: fadeInUp 0.5s ease 0.3s both;
+    }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px; padding: 13px 28px;
+      border-radius: 10px; font-family: var(--font-body); font-size: 0.88rem;
+      font-weight: 600; text-decoration: none; transition: all 0.25s; cursor: pointer; border: none;
+    }
+    .btn-primary {
+      background: var(--accent); color: var(--bg);
+      box-shadow: 0 0 0 0 #00f0b540;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px #00f0b530;
+    }
+    .btn-outline {
+      background: transparent; color: var(--text-secondary);
+      border: 1px solid var(--border);
+    }
+    .btn-outline:hover { border-color: var(--text-secondary); color: var(--text); }
+
+    /* ── TERMINAL ── */
+    .hero-terminal {
+      background: #0a0a14;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px #00000050, 0 0 40px #00f0b506;
+      animation: fadeInUp 0.6s ease 0.3s both;
+    }
+
+    .term-bar {
+      display: flex; align-items: center; gap: 8px;
+      padding: 12px 16px; background: #08080f; border-bottom: 1px solid #141428;
+    }
+    .term-bar .dots { display: flex; gap: 6px; }
+    .term-bar .dots span { width: 10px; height: 10px; border-radius: 50%; }
+    .term-bar .dots span:nth-child(1) { background: #ff5f57; }
+    .term-bar .dots span:nth-child(2) { background: #febc2e; }
+    .term-bar .dots span:nth-child(3) { background: #28c840; }
+    .term-bar .term-title {
+      flex: 1; text-align: center;
+      font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-muted);
+    }
+
+    .term-body {
+      padding: 18px; font-family: var(--font-mono); font-size: 0.73rem;
+      line-height: 2; min-height: 320px;
+    }
+
+    .term-line { opacity: 0; animation: termLine 0.3s ease forwards; }
+    .term-prompt { color: var(--accent); }
+    .term-cmd { color: var(--text); font-weight: 500; }
+    .term-output { color: var(--text-secondary); }
+    .term-highlight { color: var(--accent2); }
+    .term-warn { color: var(--accent4); }
+    .term-accent { color: var(--accent3); }
+    .term-success { color: var(--accent); }
+    .term-cursor {
+      display: inline-block; width: 8px; height: 15px;
+      background: var(--accent); margin-left: 2px; vertical-align: middle;
+      animation: blink 1s step-end infinite;
+    }
+    @keyframes blink { 50% { opacity: 0; } }
+    @keyframes termLine { to { opacity: 1; } }
+
+    /* ── STATS BAR ── */
+    .stats-bar {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 1px; background: var(--border);
+      border-radius: var(--radius); overflow: hidden;
+      margin-top: -40px; position: relative; z-index: 2;
+    }
+
+    .stat-card {
+      background: var(--bg-card); padding: 28px 24px; text-align: center;
+      transition: all 0.3s;
+    }
+    .stat-card:hover { background: var(--bg-card-hover); }
+
+    .stat-number {
+      font-family: var(--font-mono); font-size: 2rem; font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .stat-number.green { color: var(--accent); }
+    .stat-number.blue { color: var(--accent2); }
+    .stat-number.purple { color: var(--accent3); }
+    .stat-number.orange { color: var(--accent4); }
+
+    .stat-label {
+      font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;
+      letter-spacing: 0.08em; font-weight: 500;
+    }
+
+    /* ── SECTION COMMON ── */
+    .section-header { margin-bottom: 56px; }
+    .section-eyebrow {
+      font-family: var(--font-mono); font-size: 0.7rem; color: var(--accent);
+      text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 14px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .section-eyebrow .line { width: 24px; height: 1px; background: var(--accent); }
+    .section-title {
+      font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 700; letter-spacing: -0.02em;
+    }
+    .section-desc {
+      font-size: 0.95rem; color: var(--text-secondary); max-width: 600px;
+      line-height: 1.7; margin-top: 12px; font-weight: 300;
+    }
+
+    /* ── ABOUT / CERTIFICATIONS ── */
+    .about-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+
+    .about-text-card {
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 36px; transition: all 0.3s;
+    }
+    .about-text-card:hover { border-color: var(--border-hover); }
+
+    .about-text-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+    .about-text-card p { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.75; }
+
+    .card-accent {
+      width: 4px; height: 28px; border-radius: 4px; flex-shrink: 0;
+    }
+
+    .about-text-card .meta {
+      display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px;
+    }
+
+    .meta-tag {
+      font-family: var(--font-mono); font-size: 0.65rem; padding: 4px 10px;
+      border-radius: 6px; font-weight: 600; letter-spacing: 0.03em;
+    }
+
+    .tag-green { background: #00f0b515; color: var(--accent); border: 1px solid #00f0b525; }
+    .tag-blue { background: #5b8aff15; color: var(--accent2); border: 1px solid #5b8aff25; }
+    .tag-purple { background: #a78bfa15; color: var(--accent3); border: 1px solid #a78bfa25; }
+    .tag-orange { background: #f9731615; color: var(--accent4); border: 1px solid #f9731625; }
+    .tag-red { background: #f43f5e15; color: var(--accent5); border: 1px solid #f43f5e25; }
+
+    /* Cert Shields */
+    .cert-shield {
+      display: flex; align-items: center; gap: 14px;
+      background: #ffffff04; border: 1px solid #ffffff08; border-radius: 10px;
+      padding: 14px 18px; margin-top: 14px; transition: all 0.3s;
+    }
+    .cert-shield:hover { border-color: #ffffff18; background: #ffffff08; }
+    .cert-shield-icon {
+      width: 44px; height: 44px; border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem; flex-shrink: 0;
+    }
+    .cert-shield-info h4 { font-size: 0.82rem; font-weight: 600; }
+    .cert-shield-info p { font-size: 0.7rem; color: var(--text-muted); }
+
+    /* ── TIMELINE ── */
+    .timeline { position: relative; padding-left: 40px; }
+    .timeline::before {
+      content: ''; position: absolute; left: 14px; top: 8px; bottom: 8px;
+      width: 2px; background: linear-gradient(to bottom, var(--accent), var(--accent2), var(--border));
+      border-radius: 2px;
+    }
+    .tl-item { position: relative; margin-bottom: 44px; }
+    .tl-item:last-child { margin-bottom: 0; }
+    .tl-dot {
+      position: absolute; left: -34px; top: 6px; width: 16px; height: 16px;
+      border-radius: 50%; background: var(--bg); border: 3px solid var(--accent);
+      z-index: 1;
+    }
+    .tl-item:first-child .tl-dot {
+      background: var(--accent); box-shadow: 0 0 16px var(--accent);
+    }
+    .tl-date {
+      font-family: var(--font-mono); font-size: 0.7rem; color: var(--accent);
+      letter-spacing: 0.06em; margin-bottom: 6px;
+    }
+    .tl-role { font-size: 1.15rem; font-weight: 700; margin-bottom: 2px; }
+    .tl-company { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 12px; }
+    .tl-list { list-style: none; }
+    .tl-list li {
+      font-size: 0.85rem; color: var(--text-secondary); line-height: 1.75;
+      padding-left: 18px; position: relative; margin-bottom: 4px;
+    }
+    .tl-list li::before {
+      content: ''; position: absolute; left: 0; top: 10px;
+      width: 6px; height: 6px; border-radius: 50%; background: var(--accent);
+      opacity: 0.5;
+    }
+
+    /* ── PROJECTS ── */
+    .project-showcase {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 18px; overflow: hidden; margin-bottom: 32px;
+      transition: all 0.3s;
+    }
+    .project-showcase:hover { border-color: var(--border-hover); }
+
+    .project-showcase.main-project {
+      border-color: var(--accent);
+      background: linear-gradient(170deg, #0a1a14, #0a0f1a, var(--bg-card));
+    }
+
+    .project-top {
+      padding: 32px 36px 0; display: flex; justify-content: space-between;
+      align-items: flex-start; flex-wrap: wrap; gap: 12px;
+    }
+
+    .project-badges { display: flex; gap: 6px; flex-wrap: wrap; }
+
+    .p-badge {
+      font-family: var(--font-mono); font-size: 0.63rem; padding: 5px 12px;
+      border-radius: 6px; text-transform: uppercase; letter-spacing: 0.06em;
+      font-weight: 700;
+    }
+
+    .project-body-v2 { padding: 20px 36px 32px; }
+    .project-body-v2 h3 { font-size: 1.4rem; font-weight: 700; margin-bottom: 8px; }
+    .project-body-v2 .proj-desc {
+      font-size: 0.9rem; color: var(--text-secondary); line-height: 1.8; max-width: 700px;
+    }
+    .project-body-v2 .proj-desc strong { color: var(--text); font-weight: 600; }
+
+    .feature-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px; margin: 24px 0;
+    }
+
+    .feat-item {
+      background: #ffffff04; border: 1px solid #ffffff08; border-radius: 10px;
+      padding: 16px; transition: all 0.2s;
+    }
+    .feat-item:hover { border-color: #ffffff18; background: #ffffff08; }
+    .feat-item h4 { font-size: 0.82rem; font-weight: 600; margin-bottom: 4px; display: flex; align-items: center; gap: 6px; }
+    .feat-item p { font-size: 0.75rem; color: var(--text-muted); line-height: 1.6; }
+
+    .tech-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 20px; padding-top: 20px; border-top: 1px solid #ffffff08; }
+
+    /* ── MOCKUP ── */
     .mockup-gallery { margin-top: 36px; }
-    .mockup-tabs { display: flex; gap: 4px; margin-bottom: 0; padding: 0 4px; }
-    .mockup-tab { font-family: var(--font-mono); font-size: 0.72rem; padding: 10px 20px; background: #0c0c14; color: var(--text-muted); border: 1px solid var(--border); border-bottom: none; border-radius: 8px 8px 0 0; cursor: pointer; transition: all 0.2s; letter-spacing: 0.03em; }
-    .mockup-tab:hover { color: var(--text-secondary); }
-    .mockup-tab.active { background: #13131d; color: var(--accent); border-color: #00e0a030; }
-    .mockup-window { background: #13131d; border: 1px solid #00e0a020; border-radius: 0 12px 12px 12px; overflow: hidden; box-shadow: 0 24px 80px #00000060, 0 0 60px #00e0a008; }
-    .mockup-titlebar { display: flex; align-items: center; gap: 8px; padding: 12px 16px; background: #0e0e18; border-bottom: 1px solid #1a1a2a; }
-    .mockup-dots { display: flex; gap: 6px; }
-    .mockup-dots span { width: 10px; height: 10px; border-radius: 50%; }
-    .mockup-dots span:nth-child(1) { background: #ff5f57; }
-    .mockup-dots span:nth-child(2) { background: #febc2e; }
-    .mockup-dots span:nth-child(3) { background: #28c840; }
-    .mockup-url { flex: 1; background: #0a0a12; border: 1px solid #1a1a2a; border-radius: 6px; padding: 5px 14px; font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-muted); margin-left: 8px; }
-    .mockup-content { min-height: 460px; display: none; }
-    .mockup-content.active { display: block; }
+    .m-tabs { display: flex; gap: 4px; padding: 0 4px; }
+    .m-tab {
+      font-family: var(--font-mono); font-size: 0.7rem; padding: 10px 18px;
+      background: #08080e; color: var(--text-muted); border: 1px solid var(--border);
+      border-bottom: none; border-radius: 10px 10px 0 0; cursor: pointer; transition: all 0.2s;
+    }
+    .m-tab:hover { color: var(--text-secondary); }
+    .m-tab.active { background: var(--bg-elevated); color: var(--accent); border-color: #00f0b520; }
+    .m-window {
+      background: var(--bg-elevated); border: 1px solid #00f0b515;
+      border-radius: 0 14px 14px 14px; overflow: hidden;
+      box-shadow: 0 30px 80px #00000050;
+    }
+    .m-titlebar {
+      display: flex; align-items: center; gap: 8px;
+      padding: 12px 16px; background: #0a0a14; border-bottom: 1px solid #1a1a2a;
+    }
+    .m-dots { display: flex; gap: 6px; }
+    .m-dots span { width: 10px; height: 10px; border-radius: 50%; }
+    .m-dots span:nth-child(1) { background: #ff5f57; }
+    .m-dots span:nth-child(2) { background: #febc2e; }
+    .m-dots span:nth-child(3) { background: #28c840; }
+    .m-url {
+      flex: 1; background: #06060b; border: 1px solid #1a1a2a; border-radius: 6px;
+      padding: 5px 14px; font-family: var(--font-mono); font-size: 0.66rem;
+      color: var(--text-muted); margin-left: 8px;
+    }
+    .m-screen { min-height: 460px; display: none; }
+    .m-screen.active { display: block; }
 
-    /* SCREEN 1: PDV */
-    .pdv-screen { display: grid; grid-template-columns: 1fr 320px; height: 460px; }
-    .pdv-products { padding: 20px; overflow: hidden; }
-    .pdv-search { display: flex; gap: 8px; margin-bottom: 16px; }
-    .pdv-search input { flex: 1; background: #0a0a12; border: 1px solid #1e1e30; border-radius: 8px; padding: 10px 14px; font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-primary); outline: none; }
-    .pdv-search button { background: var(--accent); color: #0a0a0f; border: none; border-radius: 8px; padding: 10px 16px; font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700; cursor: pointer; }
-    .pdv-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
-    .pdv-item { background: #0e0e18; border: 1px solid #1a1a2e; border-radius: 10px; padding: 14px 10px; text-align: center; cursor: pointer; transition: all 0.2s; }
+    /* PDV Screen */
+    .pdv-layout { display: grid; grid-template-columns: 1fr 300px; height: 460px; }
+    .pdv-main { padding: 18px; overflow: hidden; }
+    .pdv-search-bar { display: flex; gap: 8px; margin-bottom: 14px; }
+    .pdv-search-bar input {
+      flex: 1; background: #0a0a12; border: 1px solid #1e1e30; border-radius: 8px;
+      padding: 10px 14px; font-family: var(--font-mono); font-size: 0.76rem;
+      color: var(--text); outline: none;
+    }
+    .pdv-search-bar .f-key {
+      background: var(--accent); color: var(--bg); border: none; border-radius: 8px;
+      padding: 10px 14px; font-family: var(--font-mono); font-size: 0.7rem; font-weight: 700;
+    }
+    .pdv-items { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+    .pdv-item {
+      background: #0c0c16; border: 1px solid #1a1a2e; border-radius: 10px;
+      padding: 14px 10px; text-align: center; transition: all 0.2s; cursor: pointer;
+    }
     .pdv-item:hover { border-color: var(--accent); transform: scale(1.03); }
-    .pdv-item-icon { width: 48px; height: 48px; border-radius: 10px; margin: 0 auto 8px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; background: #ffffff06; }
-    .pdv-item-name { font-size: 0.72rem; font-weight: 600; margin-bottom: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .pdv-item-price { font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent); font-weight: 700; }
-    .pdv-item .ai-badge-sm { font-family: var(--font-mono); font-size: 0.55rem; color: var(--accent-purple); background: #9966ff15; padding: 1px 6px; border-radius: 3px; margin-top: 4px; display: inline-block; }
-    .pdv-sidebar { background: #0b0b14; border-left: 1px solid #1a1a2e; display: flex; flex-direction: column; padding: 16px; }
-    .pdv-sidebar-title { font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px; padding-bottom: 10px; border-bottom: 1px solid #1a1a2e; }
-    .cart-item { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #12121e; font-size: 0.78rem; }
-    .cart-item-name { color: var(--text-secondary); font-size: 0.75rem; }
-    .cart-item-qty { font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-muted); }
-    .cart-item-total { font-family: var(--font-mono); color: var(--accent); font-weight: 600; font-size: 0.78rem; }
-    .cart-total-section { margin-top: auto; padding-top: 12px; border-top: 2px solid var(--accent); }
-    .cart-total-row { display: flex; justify-content: space-between; margin-bottom: 4px; font-size: 0.78rem; color: var(--text-secondary); }
-    .cart-total-row.total { font-size: 1.1rem; font-weight: 700; color: var(--text-primary); margin-top: 8px; }
-    .cart-total-row.total span:last-child { color: var(--accent); }
-    .cart-btn { margin-top: 12px; width: 100%; padding: 12px; background: var(--accent); color: #0a0a0f; border: none; border-radius: 8px; font-family: var(--font-display); font-size: 0.85rem; font-weight: 700; cursor: pointer; }
-    .cart-btn-hold { margin-top: 6px; width: 100%; padding: 8px; background: transparent; color: var(--accent-orange); border: 1px solid #ff884430; border-radius: 8px; font-family: var(--font-mono); font-size: 0.7rem; cursor: pointer; }
+    .pdv-item .emoji { font-size: 1.6rem; margin-bottom: 6px; display: block; }
+    .pdv-item .name { font-size: 0.7rem; font-weight: 600; margin-bottom: 3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .pdv-item .price { font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent); font-weight: 700; }
+    .pdv-item .ai-tag { font-family: var(--font-mono); font-size: 0.52rem; color: var(--accent3); background: #a78bfa10; padding: 1px 6px; border-radius: 3px; margin-top: 3px; display: inline-block; }
 
-    /* SCREEN 2: AI Cadastro */
-    .ai-cadastro-screen { padding: 24px; height: 460px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-    .ai-upload-zone { background: #0a0a14; border: 2px dashed #9966ff40; border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: hidden; }
-    .ai-upload-zone.processed { border-color: #00e0a060; border-style: solid; }
-    .ai-photo-preview { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 12px; }
-    .ai-product-visual { width: 120px; height: 120px; border-radius: 16px; background: linear-gradient(135deg, #1a1a2e, #0f1420); display: flex; align-items: center; justify-content: center; font-size: 3.5rem; box-shadow: 0 8px 30px #00000040; border: 1px solid #ffffff10; }
-    .ai-scan-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, transparent, #9966ff08, transparent); opacity: 0; }
-    .ai-upload-zone.processed .ai-scan-overlay { animation: scanLine 2s ease-in-out infinite; }
-    @keyframes scanLine { 0%, 100% { opacity: 0; transform: translateY(-100%); } 50% { opacity: 1; transform: translateY(100%); } }
-    .ai-confidence-badge { font-family: var(--font-mono); font-size: 0.72rem; color: #00e0a0; background: #00e0a015; border: 1px solid #00e0a030; padding: 4px 12px; border-radius: 6px; margin-top: 8px; }
-    .ai-result-panel { display: flex; flex-direction: column; gap: 12px; }
-    .ai-result-header { font-family: var(--font-mono); font-size: 0.68rem; color: var(--accent-purple); text-transform: uppercase; letter-spacing: 0.1em; display: flex; align-items: center; gap: 6px; }
-    .ai-result-header .pulse-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent-purple); animation: pulse 1.5s infinite; }
-    .ai-field { background: #0a0a14; border: 1px solid #1a1a2e; border-radius: 8px; padding: 12px 14px; }
-    .ai-field label { font-family: var(--font-mono); font-size: 0.62rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; display: block; margin-bottom: 4px; }
-    .ai-field .value { font-size: 0.88rem; color: var(--text-primary); font-weight: 600; }
-    .ai-field .value.ean { font-family: var(--font-mono); color: var(--accent); font-size: 1rem; }
-    .ai-field .auto-tag { font-family: var(--font-mono); font-size: 0.58rem; color: var(--accent-purple); background: #9966ff12; padding: 2px 6px; border-radius: 3px; margin-left: 6px; vertical-align: middle; }
-    .ai-field .value.category { color: var(--accent-blue); }
-    .ai-barcode-visual { background: #0a0a14; border: 1px solid #1a1a2e; border-radius: 8px; padding: 14px; text-align: center; }
-    .barcode-bars { display: flex; align-items: end; justify-content: center; gap: 1.5px; height: 50px; margin-bottom: 6px; }
-    .barcode-bars .bar { width: 2px; background: var(--text-primary); border-radius: 1px; }
-    .barcode-number { font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-secondary); letter-spacing: 0.15em; }
-    .ai-btn-save { padding: 12px; background: var(--accent-purple); color: white; border: none; border-radius: 8px; font-family: var(--font-display); font-size: 0.85rem; font-weight: 700; cursor: pointer; margin-top: auto; }
+    .pdv-cart {
+      background: #08080f; border-left: 1px solid #1a1a2e;
+      display: flex; flex-direction: column; padding: 14px;
+    }
+    .cart-title {
+      font-family: var(--font-mono); font-size: 0.7rem; color: var(--accent);
+      text-transform: uppercase; letter-spacing: 0.08em; padding-bottom: 10px;
+      border-bottom: 1px solid #1a1a2e; margin-bottom: 8px;
+    }
+    .cart-row {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 7px 0; border-bottom: 1px solid #0e0e1a;
+    }
+    .cart-row .cname { font-size: 0.73rem; color: var(--text-secondary); }
+    .cart-row .cqty { font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-muted); }
+    .cart-row .ctotal { font-family: var(--font-mono); font-size: 0.76rem; color: var(--accent); font-weight: 600; }
+    .cart-bottom { margin-top: auto; padding-top: 12px; border-top: 2px solid var(--accent); }
+    .cart-sum { display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-muted); margin-bottom: 3px; }
+    .cart-total { display: flex; justify-content: space-between; font-size: 1.15rem; font-weight: 700; margin-top: 6px; }
+    .cart-total span:last-child { color: var(--accent); }
+    .cart-pay {
+      width: 100%; padding: 12px; margin-top: 10px; background: var(--accent);
+      color: var(--bg); border: none; border-radius: 8px; font-family: var(--font-body);
+      font-size: 0.82rem; font-weight: 700; cursor: pointer;
+    }
+    .cart-hold {
+      width: 100%; padding: 8px; margin-top: 5px; background: transparent;
+      color: var(--accent4); border: 1px solid #f9731625; border-radius: 8px;
+      font-family: var(--font-mono); font-size: 0.68rem; cursor: pointer;
+    }
 
-    /* SCREEN 3: Busca EAN */
-    .ai-ean-screen { padding: 24px; height: 460px; }
-    .ean-search-bar { display: flex; gap: 8px; margin-bottom: 20px; }
-    .ean-search-bar input { flex: 1; background: #0a0a12; border: 1px solid #1e1e30; border-radius: 8px; padding: 12px 16px; font-family: var(--font-mono); font-size: 0.85rem; color: var(--accent); outline: none; letter-spacing: 0.1em; }
-    .ean-search-bar button { background: var(--accent-blue); color: white; border: none; border-radius: 8px; padding: 12px 20px; font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700; cursor: pointer; }
-    .ean-results { display: grid; grid-template-columns: 260px 1fr; gap: 20px; }
-    .ean-product-card { background: #0e0e18; border: 1px solid #00e0a030; border-radius: 12px; padding: 20px; text-align: center; }
-    .ean-product-img { width: 90px; height: 90px; border-radius: 14px; background: linear-gradient(135deg, #1a1a2e, #0f1420); display: flex; align-items: center; justify-content: center; font-size: 2.8rem; margin: 0 auto 14px; border: 1px solid #ffffff10; }
-    .ean-product-name { font-size: 1rem; font-weight: 700; margin-bottom: 4px; }
-    .ean-product-brand { font-size: 0.78rem; color: var(--text-muted); margin-bottom: 10px; }
-    .ean-product-ean { font-family: var(--font-mono); font-size: 0.82rem; color: var(--accent); }
-    .ean-match-badge { display: inline-block; font-family: var(--font-mono); font-size: 0.62rem; color: #00e0a0; background: #00e0a015; border: 1px solid #00e0a030; padding: 3px 10px; border-radius: 4px; margin-top: 10px; }
-    .ean-details { display: flex; flex-direction: column; gap: 8px; }
-    .ean-detail-row { display: flex; justify-content: space-between; align-items: center; background: #0a0a14; border: 1px solid #1a1a2a; border-radius: 8px; padding: 10px 14px; }
-    .ean-detail-label { font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
-    .ean-detail-value { font-size: 0.82rem; font-weight: 600; }
-    .ean-detail-value.green { color: var(--accent); }
-    .ean-detail-value.blue { color: var(--accent-blue); }
-    .ean-detail-value.orange { color: var(--accent-orange); }
-    .ean-log { margin-top: 16px; background: #08080e; border: 1px solid #1a1a2a; border-radius: 8px; padding: 12px; max-height: 120px; overflow-y: auto; }
-    .ean-log-line { font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-muted); line-height: 1.8; }
-    .ean-log-line .time { color: #555570; }
-    .ean-log-line .ok { color: var(--accent); }
-    .ean-log-line .ai { color: var(--accent-purple); }
-    .ean-log-line .info { color: var(--accent-blue); }
+    /* AI Cadastro Screen */
+    .ai-register { padding: 22px; height: 460px; display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+    .ai-photo-zone {
+      background: #08080f; border: 2px dashed #a78bfa35; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center; flex-direction: column;
+      gap: 10px; position: relative; overflow: hidden;
+    }
+    .ai-photo-zone.done { border-color: var(--accent); border-style: solid; }
+    .ai-photo-zone .scan-line {
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, transparent, #a78bfa08, transparent);
+      animation: scanAnim 2.5s ease-in-out infinite;
+    }
+    @keyframes scanAnim { 0%,100% { opacity:0; transform:translateY(-100%); } 50% { opacity:1; transform:translateY(100%); } }
+    .ai-photo-zone .product-emoji { font-size: 4rem; }
+    .ai-photo-zone .confidence {
+      font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent);
+      background: #00f0b510; border: 1px solid #00f0b525; padding: 5px 14px; border-radius: 6px;
+    }
+    .ai-fields { display: flex; flex-direction: column; gap: 10px; }
+    .ai-fields .field-header {
+      font-family: var(--font-mono); font-size: 0.66rem; color: var(--accent3);
+      text-transform: uppercase; letter-spacing: 0.1em; display: flex; align-items: center; gap: 6px;
+    }
+    .ai-fields .field-header .live-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--accent3); animation: pulse 1.5s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1}50%{opacity:0.3} }
+    .ai-f {
+      background: #08080f; border: 1px solid #1a1a2a; border-radius: 8px; padding: 10px 14px;
+    }
+    .ai-f label { font-family: var(--font-mono); font-size: 0.6rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; display: block; margin-bottom: 3px; }
+    .ai-f .val { font-size: 0.85rem; font-weight: 600; }
+    .ai-f .val.ean-val { font-family: var(--font-mono); color: var(--accent); font-size: 0.95rem; }
+    .ai-f .val.cat-val { color: var(--accent2); }
+    .ai-f .ai-auto {
+      font-family: var(--font-mono); font-size: 0.55rem; color: var(--accent3);
+      background: #a78bfa10; padding: 2px 6px; border-radius: 3px; margin-left: 6px;
+    }
+    .barcode-box {
+      background: #08080f; border: 1px solid #1a1a2a; border-radius: 8px;
+      padding: 12px; text-align: center;
+    }
+    .barcode-lines { display: flex; align-items: end; justify-content: center; gap: 1.5px; height: 44px; margin-bottom: 4px; }
+    .barcode-lines .b { background: var(--text); border-radius: 1px; }
+    .barcode-num { font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted); letter-spacing: 0.15em; }
+    .ai-save-btn {
+      padding: 12px; background: var(--accent3); color: white; border: none;
+      border-radius: 8px; font-family: var(--font-body); font-size: 0.85rem;
+      font-weight: 700; cursor: pointer; margin-top: auto;
+    }
 
-    /* SCREEN 4: AI Ícones */
-    .ai-icons-screen { padding: 24px; height: 460px; }
-    .icons-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
-    .icons-header h3 { font-size: 1rem; font-weight: 600; }
-    .icons-header .gen-badge { font-family: var(--font-mono); font-size: 0.65rem; color: var(--accent-purple); background: #9966ff12; border: 1px solid #9966ff30; padding: 4px 12px; border-radius: 6px; }
-    .icons-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
-    .icon-card { background: #0e0e18; border: 1px solid #1a1a2e; border-radius: 12px; padding: 18px 12px; text-align: center; transition: all 0.2s; position: relative; }
-    .icon-card:hover { border-color: #9966ff40; transform: translateY(-2px); }
-    .icon-card .generated-icon { width: 64px; height: 64px; border-radius: 14px; margin: 0 auto 10px; display: flex; align-items: center; justify-content: center; font-size: 2rem; position: relative; overflow: hidden; }
-    .icon-card .generated-icon::after { content: ''; position: absolute; inset: 0; border-radius: 14px; border: 1px solid #ffffff08; }
-    .icon-card .icon-name { font-size: 0.72rem; font-weight: 600; margin-bottom: 2px; }
-    .icon-card .icon-status { font-family: var(--font-mono); font-size: 0.58rem; color: var(--accent-purple); letter-spacing: 0.04em; }
-    .icon-card .check-badge { position: absolute; top: 8px; right: 8px; width: 18px; height: 18px; border-radius: 50%; background: var(--accent); color: #0a0a0f; display: flex; align-items: center; justify-content: center; font-size: 0.6rem; font-weight: 900; }
-    .icons-api-log { margin-top: 18px; background: #08080e; border: 1px solid #1a1a2a; border-radius: 8px; padding: 12px 14px; }
-    .icons-api-log .log-title { font-family: var(--font-mono); font-size: 0.62rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px; }
-    .api-call { font-family: var(--font-mono); font-size: 0.65rem; line-height: 1.8; color: var(--text-muted); }
-    .api-call .method { color: var(--accent-blue); font-weight: 700; }
-    .api-call .endpoint { color: var(--text-secondary); }
-    .api-call .status-ok { color: var(--accent); }
-    .api-call .ms { color: var(--accent-orange); }
+    /* EAN Screen */
+    .ean-screen { padding: 22px; height: 460px; }
+    .ean-bar { display: flex; gap: 8px; margin-bottom: 18px; }
+    .ean-bar input {
+      flex: 1; background: #08080f; border: 1px solid #1e1e30; border-radius: 8px;
+      padding: 12px 16px; font-family: var(--font-mono); font-size: 0.85rem;
+      color: var(--accent); outline: none; letter-spacing: 0.1em;
+    }
+    .ean-bar button {
+      background: var(--accent2); color: white; border: none; border-radius: 8px;
+      padding: 12px 18px; font-family: var(--font-mono); font-size: 0.7rem; font-weight: 700;
+    }
+    .ean-grid { display: grid; grid-template-columns: 240px 1fr; gap: 18px; }
+    .ean-card {
+      background: #0c0c16; border: 1px solid #00f0b520; border-radius: 12px;
+      padding: 20px; text-align: center;
+    }
+    .ean-card .emoji { font-size: 3rem; margin-bottom: 10px; display: block; }
+    .ean-card .pname { font-size: 1rem; font-weight: 700; margin-bottom: 2px; }
+    .ean-card .pbrand { font-size: 0.76rem; color: var(--text-muted); margin-bottom: 8px; }
+    .ean-card .pean { font-family: var(--font-mono); font-size: 0.82rem; color: var(--accent); }
+    .ean-card .found-badge {
+      display: inline-block; font-family: var(--font-mono); font-size: 0.6rem;
+      color: var(--accent); background: #00f0b510; border: 1px solid #00f0b520;
+      padding: 3px 10px; border-radius: 4px; margin-top: 8px;
+    }
+    .ean-info { display: flex; flex-direction: column; gap: 7px; }
+    .ean-row {
+      display: flex; justify-content: space-between; align-items: center;
+      background: #08080f; border: 1px solid #12121e; border-radius: 8px; padding: 9px 14px;
+    }
+    .ean-row .elabel { font-family: var(--font-mono); font-size: 0.66rem; color: var(--text-muted); text-transform: uppercase; }
+    .ean-row .evalue { font-size: 0.8rem; font-weight: 600; }
+    .ean-row .evalue.eg { color: var(--accent); }
+    .ean-row .evalue.eb { color: var(--accent2); }
+    .ean-row .evalue.eo { color: var(--accent4); }
+    .ean-terminal {
+      margin-top: 14px; background: #06060a; border: 1px solid #12121e;
+      border-radius: 8px; padding: 10px 12px; max-height: 110px; overflow-y: auto;
+    }
+    .ean-terminal .tl {
+      font-family: var(--font-mono); font-size: 0.62rem; color: var(--text-muted); line-height: 1.9;
+    }
+    .ean-terminal .tl .t { color: #444460; }
+    .ean-terminal .tl .g { color: var(--accent); }
+    .ean-terminal .tl .p { color: var(--accent3); }
+    .ean-terminal .tl .b { color: var(--accent2); }
 
-    /* SKILLS */
-    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
-    .skill-group { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; transition: all 0.3s; }
-    .skill-group:hover { border-color: var(--border-glow); transform: translateY(-2px); }
-    .skill-group h3 { font-size: 0.92rem; font-weight: 600; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
-    .skill-list { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; }
-    .skill-list li { font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-secondary); background: #ffffff06; border: 1px solid var(--border); padding: 5px 12px; border-radius: 6px; transition: all 0.2s; }
-    .skill-list li:hover { color: var(--accent); border-color: var(--accent); background: var(--accent-glow); }
-    .cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 32px; }
-    .cert-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; display: flex; gap: 18px; align-items: flex-start; transition: all 0.3s; }
-    .cert-card:hover { border-color: var(--border-glow); transform: translateY(-2px); }
-    .cert-icon { width: 48px; height: 48px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0; }
-    .cert-info h4 { font-size: 0.95rem; font-weight: 600; margin-bottom: 4px; }
-    .cert-info p { font-size: 0.8rem; color: var(--text-muted); }
-    .cert-info .cert-issuer { color: var(--text-secondary); font-size: 0.78rem; margin-top: 6px; }
+    /* Icons Screen */
+    .icons-screen { padding: 22px; height: 460px; }
+    .icons-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; }
+    .icons-top h3 { font-size: 1rem; font-weight: 600; }
+    .icons-top .ai-powered {
+      font-family: var(--font-mono); font-size: 0.63rem; color: var(--accent3);
+      background: #a78bfa10; border: 1px solid #a78bfa25; padding: 4px 12px; border-radius: 6px;
+    }
+    .icons-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .icon-item {
+      background: #0c0c16; border: 1px solid #1a1a2e; border-radius: 12px;
+      padding: 16px 10px; text-align: center; transition: all 0.2s; position: relative;
+    }
+    .icon-item:hover { border-color: #a78bfa40; transform: translateY(-2px); }
+    .icon-item .check {
+      position: absolute; top: 7px; right: 7px; width: 16px; height: 16px; border-radius: 50%;
+      background: var(--accent); color: var(--bg); display: flex; align-items: center;
+      justify-content: center; font-size: 0.55rem; font-weight: 900;
+    }
+    .icon-item .ic-emoji {
+      width: 56px; height: 56px; border-radius: 12px; margin: 0 auto 8px;
+      display: flex; align-items: center; justify-content: center; font-size: 1.8rem;
+      background: linear-gradient(135deg, #ffffff06, #ffffff02);
+    }
+    .icon-item .ic-name { font-size: 0.7rem; font-weight: 600; margin-bottom: 2px; }
+    .icon-item .ic-time { font-family: var(--font-mono); font-size: 0.56rem; color: var(--accent3); }
+    .api-log {
+      margin-top: 16px; background: #06060a; border: 1px solid #12121e;
+      border-radius: 8px; padding: 10px 14px;
+    }
+    .api-log .log-h { font-family: var(--font-mono); font-size: 0.6rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; }
+    .api-log .apil { font-family: var(--font-mono); font-size: 0.62rem; color: var(--text-muted); line-height: 1.8; }
+    .api-log .apil .method { color: var(--accent2); font-weight: 700; }
+    .api-log .apil .ep { color: var(--text-secondary); }
+    .api-log .apil .ok { color: var(--accent); }
+    .api-log .apil .ms { color: var(--accent4); }
 
-    /* CONTACT */
-    .contact-section { text-align: center; padding: 100px 0; }
-    .contact-section h2 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 16px; }
-    .contact-section p { color: var(--text-secondary); font-size: 1rem; margin-bottom: 36px; }
-    .contact-links { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
-    .contact-link { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-sm); color: var(--text-secondary); text-decoration: none; font-size: 0.85rem; font-weight: 500; transition: all 0.25s; }
-    .contact-link:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
-    footer { border-top: 1px solid var(--border); padding: 28px 0; text-align: center; }
-    footer p { font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted); }
+    /* ── SKILLS ── */
+    .skills-layout { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 
+    .skill-card {
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 28px; transition: all 0.3s; position: relative; overflow: hidden;
+    }
+    .skill-card:hover { border-color: var(--border-hover); transform: translateY(-3px); }
+
+    .skill-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      border-radius: var(--radius) var(--radius) 0 0;
+    }
+    .skill-card.sc-green::before { background: linear-gradient(90deg, var(--accent), #00f0b560); }
+    .skill-card.sc-blue::before { background: linear-gradient(90deg, var(--accent2), #5b8aff60); }
+    .skill-card.sc-purple::before { background: linear-gradient(90deg, var(--accent3), #a78bfa60); }
+
+    .skill-card h3 {
+      font-size: 0.9rem; font-weight: 700; margin-bottom: 18px;
+      display: flex; align-items: center; gap: 8px;
+    }
+
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+
+    .skill-tag {
+      font-family: var(--font-mono); font-size: 0.72rem; padding: 6px 14px;
+      border-radius: 8px; font-weight: 500; transition: all 0.2s; cursor: default;
+    }
+
+    .skill-tag.st-green {
+      background: #00f0b50e; color: var(--accent); border: 1px solid #00f0b520;
+    }
+    .skill-tag.st-green:hover { background: #00f0b520; border-color: var(--accent); box-shadow: 0 0 12px #00f0b515; }
+
+    .skill-tag.st-blue {
+      background: #5b8aff0e; color: var(--accent2); border: 1px solid #5b8aff20;
+    }
+    .skill-tag.st-blue:hover { background: #5b8aff20; border-color: var(--accent2); box-shadow: 0 0 12px #5b8aff15; }
+
+    .skill-tag.st-purple {
+      background: #a78bfa0e; color: var(--accent3); border: 1px solid #a78bfa20;
+    }
+    .skill-tag.st-purple:hover { background: #a78bfa20; border-color: var(--accent3); box-shadow: 0 0 12px #a78bfa15; }
+
+    /* Certs Row */
+    .certs-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 28px; }
+    .cert-card-v2 {
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 24px; display: flex; gap: 16px; align-items: flex-start; transition: all 0.3s;
+    }
+    .cert-card-v2:hover { border-color: var(--border-hover); transform: translateY(-2px); }
+    .cc-icon {
+      width: 46px; height: 46px; border-radius: 10px; display: flex;
+      align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0;
+    }
+    .cc-info h4 { font-size: 0.88rem; font-weight: 600; margin-bottom: 3px; }
+    .cc-info p { font-size: 0.75rem; color: var(--text-muted); }
+    .cc-info .issuer { font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-secondary); margin-top: 6px; }
+
+    /* ── CONTACT ── */
+    .contact-section { text-align: center; padding: 120px 0; }
+    .contact-section h2 {
+      font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800;
+      letter-spacing: -0.02em; margin-bottom: 14px;
+    }
+    .contact-section h2 .gradient {
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .contact-section > .container > p { color: var(--text-secondary); font-size: 1rem; margin-bottom: 36px; }
+    .contact-row { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+    .c-link {
+      display: inline-flex; align-items: center; gap: 8px; padding: 14px 26px;
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px;
+      color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;
+      font-weight: 500; transition: all 0.25s;
+    }
+    .c-link:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); box-shadow: 0 8px 24px #00000030; }
+    .c-link svg { flex-shrink: 0; }
+
+    footer {
+      border-top: 1px solid var(--border); padding: 28px 0; text-align: center;
+    }
+    footer p { font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted); }
+
+    /* ── ANIMATIONS ── */
     @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
-    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
 
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-terminal { display: none; }
+      .stats-bar { grid-template-columns: repeat(2, 1fr); margin-top: 0; }
+      .about-layout { grid-template-columns: 1fr; }
+      .skills-layout { grid-template-columns: 1fr; }
+      .certs-row { grid-template-columns: 1fr; }
+    }
     @media (max-width: 768px) {
       section { padding: 60px 0; }
-      .about-grid { grid-template-columns: 1fr; }
-      .hero-stats { gap: 24px; flex-wrap: wrap; }
-      .nav-links a { padding: 6px 10px; font-size: 0.75rem; }
-      .pdv-screen { grid-template-columns: 1fr; }
-      .pdv-sidebar { display: none; }
-      .pdv-grid { grid-template-columns: repeat(2, 1fr); }
-      .ai-cadastro-screen { grid-template-columns: 1fr; overflow-y: auto; }
-      .ean-results { grid-template-columns: 1fr; }
+      .pdv-layout { grid-template-columns: 1fr; }
+      .pdv-cart { display: none; }
+      .pdv-items { grid-template-columns: repeat(2, 1fr); }
+      .ai-register { grid-template-columns: 1fr; overflow-y: auto; }
+      .ean-grid { grid-template-columns: 1fr; }
       .icons-grid { grid-template-columns: repeat(2, 1fr); }
-      .mockup-tabs { overflow-x: auto; }
-      .mockup-tab { white-space: nowrap; font-size: 0.65rem; padding: 8px 14px; }
+      .m-tabs { overflow-x: auto; }
+      .m-tab { white-space: nowrap; font-size: 0.63rem; padding: 8px 12px; }
+      .nav-links a { font-size: 0.72rem; padding: 6px 10px; }
+      .nav-cmd { display: none; }
     }
     @media (max-width: 480px) {
-      .nav-links { gap: 2px; }
-      .hero-stats { flex-direction: column; gap: 16px; }
+      .stats-bar { grid-template-columns: 1fr 1fr; }
+      .hero-actions { flex-direction: column; }
     }
   </style>
 </head>
 <body>
 
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <div class="bg-grid"></div>
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+
+  <!-- COMMAND PALETTE -->
+  <div class="cmd-overlay" id="cmdOverlay">
+    <div class="cmd-box">
+      <div class="cmd-input-wrap">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input class="cmd-input" id="cmdInput" placeholder="Navegar para..." autocomplete="off">
+      </div>
+      <div class="cmd-results" id="cmdResults">
+        <a class="cmd-item" href="#sobre"><div class="cmd-icon">🎓</div><div><div class="cmd-label">Perfil & Formação</div><div class="cmd-desc">Graduação, certificações e qualificações</div></div></a>
+        <a class="cmd-item" href="#experiencia"><div class="cmd-icon">💼</div><div><div class="cmd-label">Experiência Profissional</div><div class="cmd-desc">Trajetória e cargos anteriores</div></div></a>
+        <a class="cmd-item" href="#projetos"><div class="cmd-icon">🚀</div><div><div class="cmd-label">Projetos & Sistemas</div><div class="cmd-desc">PDV SaaS, IA e automações</div></div></a>
+        <a class="cmd-item" href="#skills"><div class="cmd-icon">⚡</div><div><div class="cmd-label">Habilidades Técnicas</div><div class="cmd-desc">Stack, ferramentas e competências</div></div></a>
+        <a class="cmd-item" href="#contato"><div class="cmd-icon">📬</div><div><div class="cmd-label">Contato</div><div class="cmd-desc">E-mail, telefone e GitHub</div></div></a>
+        <a class="cmd-item" href="mailto:kadu.corpti@gmail.com"><div class="cmd-icon">✉️</div><div><div class="cmd-label">Enviar E-mail</div><div class="cmd-desc">kadu.corpti@gmail.com</div></div></a>
+      </div>
+      <div class="cmd-footer"><span><kbd>↑↓</kbd> navegar</span><span><kbd>Enter</kbd> selecionar</span><span><kbd>Esc</kbd> fechar</span></div>
+    </div>
+  </div>
+
+  <!-- NAV -->
   <nav id="navbar">
     <div class="nav-inner">
-      <div class="nav-logo">kadu<span>.dev</span></div>
+      <div class="nav-logo">carlos.eduardo<span class="dim">/dev</span></div>
       <div class="nav-links">
         <a href="#sobre">Sobre</a>
         <a href="#experiencia">Experiência</a>
         <a href="#projetos">Projetos</a>
         <a href="#skills">Skills</a>
         <a href="#contato">Contato</a>
+        <button class="nav-cmd" onclick="openCmd()">Buscar... <kbd>⌘K</kbd></button>
       </div>
     </div>
   </nav>
@@ -290,23 +814,42 @@
   <!-- HERO -->
   <section class="hero">
     <div class="container">
-      <div class="hero-content">
-        <div class="hero-tag"><span class="dot"></span> Disponível para novas oportunidades</div>
-        <h1>Suporte técnico<br>com visão de<br><span class="highlight">desenvolvedor.</span></h1>
-        <p class="hero-description">Analista de Suporte com experiência em infraestrutura de redes, resolução de incidentes e desenvolvimento de sistemas em produção — incluindo aplicações com Inteligência Artificial.</p>
-        <div class="hero-actions">
-          <a href="#projetos" class="btn btn-primary">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-            Ver Projetos
-          </a>
-          <a href="#contato" class="btn btn-ghost">Entrar em contato</a>
+      <div class="hero-grid">
+        <div>
+          <div class="hero-eyebrow"><span class="line"></span> Analista de Suporte & Desenvolvedor</div>
+          <h1>Carlos Eduardo<br><span class="gradient">Costa Coelho</span></h1>
+          <p class="hero-sub">
+            Profissional de T.I. com expertise em <strong>suporte técnico</strong>, <strong>infraestrutura de redes</strong> e <strong>desenvolvimento de sistemas</strong> — criando soluções SaaS em produção com inteligência artificial integrada.
+          </p>
+          <div class="hero-actions">
+            <a href="#projetos" class="btn btn-primary">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              Ver Projetos
+            </a>
+            <a href="#contato" class="btn btn-outline">Entrar em contato →</a>
+          </div>
         </div>
-        <div class="hero-stats">
-          <div class="stat-item"><div class="stat-value">1+</div><div class="stat-label">ano em T.I.</div></div>
-          <div class="stat-item"><div class="stat-value">3</div><div class="stat-label">Certificações</div></div>
-          <div class="stat-item"><div class="stat-value">SaaS</div><div class="stat-label">PDV em produção</div></div>
-          <div class="stat-item"><div class="stat-value">IA</div><div class="stat-label">Aplicada em sistemas</div></div>
+
+        <!-- TERMINAL -->
+        <div class="hero-terminal">
+          <div class="term-bar">
+            <div class="dots"><span></span><span></span><span></span></div>
+            <div class="term-title">kadu@portfolio:~</div>
+          </div>
+          <div class="term-body" id="terminal"></div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section style="padding:0;">
+    <div class="container">
+      <div class="stats-bar reveal">
+        <div class="stat-card"><div class="stat-number green" data-count="3">0</div><div class="stat-label">Certificações</div></div>
+        <div class="stat-card"><div class="stat-number blue" data-count="1">0</div><div class="stat-label">Sistema em Produção</div></div>
+        <div class="stat-card"><div class="stat-number purple" data-count="6">0</div><div class="stat-label">Linguagens</div></div>
+        <div class="stat-card"><div class="stat-number orange" data-count="3">0</div><div class="stat-label">Módulos de IA ativos</div></div>
       </div>
     </div>
   </section>
@@ -314,58 +857,92 @@
   <!-- SOBRE -->
   <section id="sobre">
     <div class="container">
-      <div class="section-header reveal"><div class="section-label">// sobre mim</div><h2 class="section-title">Perfil &amp; Formação</h2></div>
-      <div class="about-grid">
-        <div class="about-card reveal">
-          <div class="card-icon icon-green">🎓</div>
-          <h3>Ciências da Computação</h3>
-          <p>Graduando pela Faculdade Anhanguera, Campinas. Formação prevista para <strong>2026</strong>, com base sólida em lógica, redes e desenvolvimento de software.</p>
-          <span class="card-tag">Conclusão 2026</span>
+      <div class="section-header reveal">
+        <div class="section-eyebrow"><span class="line"></span> Perfil & Formação</div>
+        <h2 class="section-title">Quem sou eu</h2>
+        <p class="section-desc">Estudante de Ciência da Computação com certificações em segurança e redes, combinando base acadêmica sólida com aprendizado contínuo.</p>
+      </div>
+
+      <div class="about-layout">
+        <div class="about-text-card reveal">
+          <h3><span class="card-accent" style="background:var(--accent)"></span> Formação Acadêmica</h3>
+          <p>Graduando em <strong style="color:var(--text)">Ciências da Computação</strong> pela Faculdade Anhanguera (Campinas), com conclusão prevista para <strong style="color:var(--accent)">2026</strong>. Base sólida em algoritmos, estruturas de dados, redes e engenharia de software.</p>
+          <div class="meta">
+            <span class="meta-tag tag-green">Conclusão 2026</span>
+            <span class="meta-tag tag-blue">Anhanguera — Campinas</span>
+          </div>
         </div>
-        <div class="about-card reveal">
-          <div class="card-icon icon-blue">🛡️</div>
-          <h3>SOC Analyst Foundations</h3>
-          <p>Certificação pela <strong>IBSEC</strong> com foco em fundamentos de monitoramento de segurança, análise de incidentes e processos de um Security Operations Center.</p>
-          <span class="card-tag">IBSEC</span>
+
+        <div class="about-text-card reveal">
+          <h3><span class="card-accent" style="background:var(--accent2)"></span> Arquitetura de Redes</h3>
+          <p>Conhecimento aprofundado em <strong style="color:var(--text)">planejamento, design e implementação de infraestrutura de rede</strong> — cabeamento estruturado, ativos, topologias e protocolos. Formação complementada por curso dedicado na Udemy e disciplinas da graduação.</p>
+          <div class="meta">
+            <span class="meta-tag tag-blue">Faculdade</span>
+            <span class="meta-tag tag-orange">Curso Udemy</span>
+          </div>
+          <div class="cert-shield">
+            <div class="cert-shield-icon" style="background:#5b8aff15; border:1px solid #5b8aff25">🌐</div>
+            <div class="cert-shield-info"><h4>Certificação — Arquitetura de Redes</h4><p>IBSEC — Instituto Brasileiro de Cibersegurança</p></div>
+          </div>
         </div>
-        <div class="about-card reveal">
-          <div class="card-icon icon-orange">🌐</div>
-          <h3>Arquitetura de Redes</h3>
-          <p>Certificação <strong>IBSEC</strong> abrangendo planejamento, design e implementação de infraestrutura de rede — cabeamento, ativos e topologias.</p>
-          <span class="card-tag">IBSEC</span>
+
+        <div class="about-text-card reveal">
+          <h3><span class="card-accent" style="background:var(--accent3)"></span> SOC Analyst Foundations</h3>
+          <p>Certificação focada em <strong style="color:var(--text)">fundamentos de Security Operations Center</strong> — monitoramento de segurança, triagem de alertas, análise e resposta a incidentes cibernéticos.</p>
+          <div class="meta"><span class="meta-tag tag-purple">Cibersegurança</span></div>
+          <div class="cert-shield">
+            <div class="cert-shield-icon" style="background:#a78bfa15; border:1px solid #a78bfa25">🛡️</div>
+            <div class="cert-shield-info"><h4>Certificação — SOC Analyst Foundations</h4><p>IBSEC — Instituto Brasileiro de Cibersegurança</p></div>
+          </div>
         </div>
-        <div class="about-card reveal">
-          <div class="card-icon icon-purple">☕</div>
-          <h3>Java — Oracle Academy</h3>
-          <p>Fundamentos de programação Java com certificação da <strong>Oracle Academy</strong>, reforçando lógica orientada a objetos e boas práticas.</p>
-          <span class="card-tag">Oracle</span>
+
+        <div class="about-text-card reveal">
+          <h3><span class="card-accent" style="background:var(--accent4)"></span> Java — Oracle Academy</h3>
+          <p>Certificação em fundamentos de <strong style="color:var(--text)">Java</strong> pela Oracle Academy — programação orientada a objetos, estruturas de dados e boas práticas de código limpo.</p>
+          <div class="meta"><span class="meta-tag tag-orange">Oracle Academy</span><span class="meta-tag tag-red">OOP</span></div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- EXPERIÊNCIA -->
-  <section id="experiencia">
+  <section id="experiencia" style="background:#08080e; border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
     <div class="container">
-      <div class="section-header reveal"><div class="section-label">// experiência profissional</div><h2 class="section-title">Trajetória</h2></div>
+      <div class="section-header reveal">
+        <div class="section-eyebrow"><span class="line"></span> Experiência Profissional</div>
+        <h2 class="section-title">Trajetória</h2>
+      </div>
       <div class="timeline reveal">
-        <div class="timeline-item">
-          <div class="timeline-date">Fevereiro 2025 — Atual</div>
-          <div class="timeline-role">Assistente de Suporte Jr</div>
-          <div class="timeline-company">Doc Tecnologia — Paulínia, SP</div>
-          <div class="timeline-desc"><ul><li>Suporte em T.I. (hardware/software) e resolução de incidentes em primeiro nível</li><li>Elaboração de processos internos e treinamentos operacionais</li></ul></div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-date">Fevereiro 2025 — Atual</div>
+          <div class="tl-role">Assistente de Suporte Jr</div>
+          <div class="tl-company">Doc Tecnologia — Paulínia, SP</div>
+          <ul class="tl-list">
+            <li>Suporte em T.I. (hardware/software) e resolução de incidentes em primeiro nível</li>
+            <li>Elaboração de processos internos e treinamentos operacionais</li>
+          </ul>
         </div>
-        <div class="timeline-item">
-          <div class="timeline-date">Agosto 2024 — Dezembro 2024</div>
-          <div class="timeline-role">Estagiário — Analista de Sistemas</div>
-          <div class="timeline-company">GSSO — Paulínia, SP</div>
-          <div class="timeline-desc"><ul><li>Gerenciamento e acompanhamento de chamados para tratamento de erros de sistema</li><li>Gestão do Sistema SOC (saúde ocupacional), incluindo capacitação de funcionários</li><li>Suporte e manutenção de infraestrutura de redes (cabeamento e instalação de ativos)</li></ul></div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-date">Agosto 2024 — Dezembro 2024</div>
+          <div class="tl-role">Estagiário — Analista de Sistemas</div>
+          <div class="tl-company">GSSO — Paulínia, SP</div>
+          <ul class="tl-list">
+            <li>Gerenciamento e tratamento de chamados de erros de sistema</li>
+            <li>Gestão do Sistema SOC (saúde ocupacional) — capacitação de funcionários</li>
+            <li>Manutenção de infraestrutura de redes: cabeamento e instalação de ativos</li>
+          </ul>
         </div>
-        <div class="timeline-item">
-          <div class="timeline-date">Janeiro 2024 — Abril 2024</div>
-          <div class="timeline-role">Técnico de TI</div>
-          <div class="timeline-company">MICROPRO — Paulínia, SP</div>
-          <div class="timeline-desc"><ul><li>Suporte de hardware e manutenção de computadores</li><li>Monitoramento de rede e gerenciamento de bloqueios de sites</li></ul></div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-date">Janeiro 2024 — Abril 2024</div>
+          <div class="tl-role">Técnico de TI</div>
+          <div class="tl-company">MICROPRO — Paulínia, SP</div>
+          <ul class="tl-list">
+            <li>Suporte de hardware e manutenção de computadores</li>
+            <li>Monitoramento de rede e gerenciamento de bloqueios</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -374,203 +951,225 @@
   <!-- PROJETOS -->
   <section id="projetos">
     <div class="container">
-      <div class="section-header reveal"><div class="section-label">// projetos em destaque</div><h2 class="section-title">O que eu construo</h2></div>
+      <div class="section-header reveal">
+        <div class="section-eyebrow"><span class="line"></span> Projetos em Destaque</div>
+        <h2 class="section-title">O que eu construo</h2>
+        <p class="section-desc">Sistemas reais em produção, com arquitetura profissional e inteligência artificial integrada ao fluxo operacional.</p>
+      </div>
 
-      <div class="project-card featured reveal">
-        <div class="project-header">
-          <div style="display:flex; gap:8px; flex-wrap:wrap;">
-            <span class="project-badge badge-live">● Em Produção</span>
-            <span class="project-badge badge-dev">Full Stack</span>
-            <span class="project-badge badge-ai">✦ IA Integrada</span>
+      <div class="project-showcase main-project reveal">
+        <div class="project-top">
+          <div class="project-badges">
+            <span class="p-badge tag-green">● Em Produção</span>
+            <span class="p-badge tag-blue">Full Stack</span>
+            <span class="p-badge tag-purple">✦ IA Integrada</span>
           </div>
         </div>
-        <div class="project-body">
+        <div class="project-body-v2">
           <h3>Sistema PDV — Plataforma SaaS</h3>
-          <p>Desenvolvimento full stack de uma plataforma de Ponto de Venda como serviço. Arquitetura multi-tenant (PostgreSQL), interface moderna para operação em tempo real e funcionalidades de IA para cadastro inteligente de produtos. <strong>Já em operação na web.</strong></p>
-          <div class="project-features">
-            <span class="feature-tag">Gestão de vendas em tempo real</span>
-            <span class="feature-tag">Controle de estoque</span>
-            <span class="feature-tag">Multi-tenant</span>
-            <span class="feature-tag">Tabelas de preço dinâmicas</span>
-            <span class="feature-tag">Hold / Park de vendas</span>
-            <span class="feature-tag">Cadastro por foto (IA)</span>
-            <span class="feature-tag">Busca EAN automática</span>
-            <span class="feature-tag">Geração de ícones (IA)</span>
+          <p class="proj-desc">
+            Plataforma completa de <strong>Ponto de Venda</strong> desenvolvida do zero com arquitetura <strong>multi-tenant</strong> em PostgreSQL. O sistema gerencia vendas em tempo real, controle de estoque, tabelas de preço dinâmicas e inclui três módulos de inteligência artificial: <strong>cadastro de produtos por foto</strong> com reconhecimento visual, <strong>busca automática de EAN</strong> no banco de dados e <strong>geração de ícones via APIs de IA</strong>. O sistema já opera na web com dados reais, persistência de carrinho server-side e funcionalidades avançadas como hold/park de vendas e resumo diário.
+          </p>
+          <div class="feature-grid">
+            <div class="feat-item"><h4>📸 Cadastro por Foto</h4><p>IA identifica o produto pela imagem e preenche nome, EAN e categoria automaticamente.</p></div>
+            <div class="feat-item"><h4>🔎 Busca EAN Automática</h4><p>Código de barras é cruzado no banco de dados para retornar preço, estoque e NCM.</p></div>
+            <div class="feat-item"><h4>🎨 Ícones Gerados por IA</h4><p>APIs de IA geram automaticamente os ícones visuais para cada produto cadastrado.</p></div>
+            <div class="feat-item"><h4>⏸ Hold/Park de Vendas</h4><p>Vendas podem ser pausadas e retomadas, com persistência total no servidor.</p></div>
+            <div class="feat-item"><h4>💰 Tabelas de Preço</h4><p>Sistema de preços vinculado por preco_id permite atualização em massa.</p></div>
+            <div class="feat-item"><h4>📊 Resumo Diário</h4><p>Dashboard com totalizadores e métricas de vendas do dia em tempo real.</p></div>
           </div>
-          <div class="project-tech">
-            <span class="tech-pill">PHP</span>
-            <span class="tech-pill blue">PostgreSQL</span>
-            <span class="tech-pill orange">JavaScript</span>
-            <span class="tech-pill purple">APIs de IA</span>
-            <span class="tech-pill">HTML/CSS</span>
-            <span class="tech-pill blue">AJAX</span>
+          <div class="tech-row">
+            <span class="meta-tag tag-green">PHP</span>
+            <span class="meta-tag tag-blue">PostgreSQL</span>
+            <span class="meta-tag tag-orange">JavaScript</span>
+            <span class="meta-tag tag-purple">APIs de IA</span>
+            <span class="meta-tag tag-green">HTML/CSS</span>
+            <span class="meta-tag tag-blue">AJAX</span>
+            <span class="meta-tag tag-purple">Multi-Tenant</span>
           </div>
         </div>
       </div>
 
-      <!-- MOCKUP GALLERY -->
+      <!-- MOCKUPS -->
       <div class="mockup-gallery reveal">
-        <div class="mockup-tabs">
-          <button class="mockup-tab active" data-screen="pdv">🖥️ PDV Principal</button>
-          <button class="mockup-tab" data-screen="cadastro">📸 Cadastro por Foto</button>
-          <button class="mockup-tab" data-screen="ean">🔎 Busca EAN</button>
-          <button class="mockup-tab" data-screen="icons">🎨 Ícones IA</button>
+        <div class="m-tabs">
+          <button class="m-tab active" data-screen="pdv">🖥️ PDV Principal</button>
+          <button class="m-tab" data-screen="cadastro">📸 Cadastro por Foto</button>
+          <button class="m-tab" data-screen="ean">🔎 Busca EAN</button>
+          <button class="m-tab" data-screen="icons">🎨 Ícones IA</button>
         </div>
-
-        <div class="mockup-window">
-          <div class="mockup-titlebar">
-            <div class="mockup-dots"><span></span><span></span><span></span></div>
-            <div class="mockup-url" id="mockup-url-text">https://app.kadupdv.com.br/vendas</div>
+        <div class="m-window">
+          <div class="m-titlebar">
+            <div class="m-dots"><span></span><span></span><span></span></div>
+            <div class="m-url" id="mUrl">https://app.kadupdv.com.br/vendas</div>
           </div>
 
-          <!-- SCREEN 1: PDV -->
-          <div class="mockup-content active" id="screen-pdv">
-            <div class="pdv-screen">
-              <div class="pdv-products">
-                <div class="pdv-search">
-                  <input type="text" value="🔍  Buscar produto ou escanear código..." readonly>
-                  <button>F2</button>
-                </div>
-                <div class="pdv-grid">
-                  <div class="pdv-item"><div class="pdv-item-icon" style="background:linear-gradient(135deg,#1a2a1a,#0a1a0a)">🥤</div><div class="pdv-item-name">Coca-Cola 2L</div><div class="pdv-item-price">R$ 10,99</div><div class="ai-badge-sm">ícone: IA</div></div>
-                  <div class="pdv-item"><div class="pdv-item-icon" style="background:linear-gradient(135deg,#2a2a1a,#1a1a0a)">🍞</div><div class="pdv-item-name">Pão Francês Kg</div><div class="pdv-item-price">R$ 16,90</div><div class="ai-badge-sm">ícone: IA</div></div>
-                  <div class="pdv-item"><div class="pdv-item-icon" style="background:linear-gradient(135deg,#1a1a2a,#0a0a1a)">🧀</div><div class="pdv-item-name">Queijo Mussarela</div><div class="pdv-item-price">R$ 44,90</div><div class="ai-badge-sm">ícone: IA</div></div>
-                  <div class="pdv-item"><div class="pdv-item-icon" style="background:linear-gradient(135deg,#2a1a1a,#1a0a0a)">🍎</div><div class="pdv-item-name">Maçã Fuji Kg</div><div class="pdv-item-price">R$ 12,49</div><div class="ai-badge-sm">ícone: IA</div></div>
-                  <div class="pdv-item"><div class="pdv-item-icon" style="background:linear-gradient(135deg,#1a2a2a,#0a1a1a)">🥛</div><div class="pdv-item-name">Leite Integral 1L</div><div class="pdv-item-price">R$ 6,29</div><div class="ai-badge-sm">ícone: IA</div></div>
-                  <div class="pdv-item"><div class="pdv-item-icon" style="background:linear-gradient(135deg,#2a2a2a,#1a1a1a)">🍚</div><div class="pdv-item-name">Arroz Tio João 5Kg</div><div class="pdv-item-price">R$ 27,90</div><div class="ai-badge-sm">ícone: IA</div></div>
+          <!-- PDV -->
+          <div class="m-screen active" id="scr-pdv">
+            <div class="pdv-layout">
+              <div class="pdv-main">
+                <div class="pdv-search-bar"><input value="🔍  Buscar produto ou escanear código..." readonly><button class="f-key">F2</button></div>
+                <div class="pdv-items">
+                  <div class="pdv-item"><span class="emoji">🥤</span><div class="name">Coca-Cola 2L</div><div class="price">R$ 10,99</div><div class="ai-tag">ícone: IA</div></div>
+                  <div class="pdv-item"><span class="emoji">🍞</span><div class="name">Pão Francês Kg</div><div class="price">R$ 16,90</div><div class="ai-tag">ícone: IA</div></div>
+                  <div class="pdv-item"><span class="emoji">🧀</span><div class="name">Queijo Mussarela</div><div class="price">R$ 44,90</div><div class="ai-tag">ícone: IA</div></div>
+                  <div class="pdv-item"><span class="emoji">🍎</span><div class="name">Maçã Fuji Kg</div><div class="price">R$ 12,49</div><div class="ai-tag">ícone: IA</div></div>
+                  <div class="pdv-item"><span class="emoji">🥛</span><div class="name">Leite Integral 1L</div><div class="price">R$ 6,29</div><div class="ai-tag">ícone: IA</div></div>
+                  <div class="pdv-item"><span class="emoji">🍚</span><div class="name">Arroz Tio João 5Kg</div><div class="price">R$ 27,90</div><div class="ai-tag">ícone: IA</div></div>
                 </div>
               </div>
-              <div class="pdv-sidebar">
-                <div class="pdv-sidebar-title">🛒 Carrinho — Venda #0847</div>
-                <div class="cart-item"><div><div class="cart-item-name">Coca-Cola 2L</div><div class="cart-item-qty">2x R$ 10,99</div></div><div class="cart-item-total">R$ 21,98</div></div>
-                <div class="cart-item"><div><div class="cart-item-name">Queijo Mussarela</div><div class="cart-item-qty">0.5kg × R$ 44,90</div></div><div class="cart-item-total">R$ 22,45</div></div>
-                <div class="cart-item"><div><div class="cart-item-name">Pão Francês</div><div class="cart-item-qty">0.8kg × R$ 16,90</div></div><div class="cart-item-total">R$ 13,52</div></div>
-                <div class="cart-item"><div><div class="cart-item-name">Arroz Tio João 5Kg</div><div class="cart-item-qty">1x R$ 27,90</div></div><div class="cart-item-total">R$ 27,90</div></div>
-                <div class="cart-total-section">
-                  <div class="cart-total-row"><span>Itens</span><span>4 produtos</span></div>
-                  <div class="cart-total-row"><span>Subtotal</span><span>R$ 85,85</span></div>
-                  <div class="cart-total-row total"><span>TOTAL</span><span>R$ 85,85</span></div>
+              <div class="pdv-cart">
+                <div class="cart-title">🛒 Carrinho — Venda #0847</div>
+                <div class="cart-row"><div><div class="cname">Coca-Cola 2L</div><div class="cqty">2x R$ 10,99</div></div><div class="ctotal">R$ 21,98</div></div>
+                <div class="cart-row"><div><div class="cname">Queijo Mussarela</div><div class="cqty">0.5kg × R$ 44,90</div></div><div class="ctotal">R$ 22,45</div></div>
+                <div class="cart-row"><div><div class="cname">Pão Francês</div><div class="cqty">0.8kg × R$ 16,90</div></div><div class="ctotal">R$ 13,52</div></div>
+                <div class="cart-row"><div><div class="cname">Arroz Tio João 5Kg</div><div class="cqty">1x R$ 27,90</div></div><div class="ctotal">R$ 27,90</div></div>
+                <div class="cart-bottom">
+                  <div class="cart-sum"><span>Itens</span><span>4 produtos</span></div>
+                  <div class="cart-sum"><span>Subtotal</span><span>R$ 85,85</span></div>
+                  <div class="cart-total"><span>TOTAL</span><span>R$ 85,85</span></div>
                 </div>
-                <button class="cart-btn">FINALIZAR VENDA (F12)</button>
-                <button class="cart-btn-hold">⏸ PAUSAR VENDA (F9)</button>
+                <button class="cart-pay">FINALIZAR VENDA (F12)</button>
+                <button class="cart-hold">⏸ PAUSAR VENDA (F9)</button>
               </div>
             </div>
           </div>
 
-          <!-- SCREEN 2: Cadastro por Foto -->
-          <div class="mockup-content" id="screen-cadastro">
-            <div class="ai-cadastro-screen">
-              <div class="ai-upload-zone processed">
-                <div class="ai-scan-overlay"></div>
-                <div class="ai-photo-preview">
-                  <div class="ai-product-visual">🧃</div>
-                  <div class="ai-confidence-badge">✓ Confiança: 96.7% — Suco de Laranja Natural</div>
-                </div>
+          <!-- CADASTRO POR FOTO -->
+          <div class="m-screen" id="scr-cadastro">
+            <div class="ai-register">
+              <div class="ai-photo-zone done">
+                <div class="scan-line"></div>
+                <div class="product-emoji">🧃</div>
+                <div class="confidence">✓ Confiança: 96.7% — Suco de Laranja Natural</div>
               </div>
-              <div class="ai-result-panel">
-                <div class="ai-result-header"><span class="pulse-dot"></span> IA — Resultado do Reconhecimento</div>
-                <div class="ai-field"><label>Produto Identificado</label><div class="value">Suco de Laranja Natural 1L <span class="auto-tag">auto IA</span></div></div>
-                <div class="ai-field"><label>Código EAN (buscado automaticamente)</label><div class="value ean">7891000315507 <span class="auto-tag">banco de dados</span></div></div>
-                <div class="ai-barcode-visual">
-                  <div class="barcode-bars" id="barcode-1"></div>
-                  <div class="barcode-number">7 891000 315507</div>
-                </div>
-                <div class="ai-field"><label>Categoria</label><div class="value category">Bebidas › Sucos Naturais <span class="auto-tag">auto IA</span></div></div>
-                <div class="ai-field"><label>Marca Detectada</label><div class="value">Del Valle <span class="auto-tag">auto IA</span></div></div>
-                <button class="ai-btn-save">✓ Cadastrar Produto no Sistema</button>
+              <div class="ai-fields">
+                <div class="field-header"><span class="live-dot"></span> IA — Resultado do Reconhecimento</div>
+                <div class="ai-f"><label>Produto Identificado</label><div class="val">Suco de Laranja Natural 1L <span class="ai-auto">auto IA</span></div></div>
+                <div class="ai-f"><label>Código EAN (buscado automaticamente)</label><div class="val ean-val">7891000315507 <span class="ai-auto">banco de dados</span></div></div>
+                <div class="barcode-box"><div class="barcode-lines" id="bc1"></div><div class="barcode-num">7 891000 315507</div></div>
+                <div class="ai-f"><label>Categoria</label><div class="val cat-val">Bebidas › Sucos Naturais <span class="ai-auto">auto IA</span></div></div>
+                <div class="ai-f"><label>Marca Detectada</label><div class="val">Del Valle <span class="ai-auto">auto IA</span></div></div>
+                <button class="ai-save-btn">✓ Cadastrar Produto no Sistema</button>
               </div>
             </div>
           </div>
 
-          <!-- SCREEN 3: Busca EAN -->
-          <div class="mockup-content" id="screen-ean">
-            <div class="ai-ean-screen">
-              <div class="ean-search-bar">
-                <input type="text" value="7891910000197" readonly>
-                <button>BUSCAR EAN</button>
-              </div>
-              <div class="ean-results">
-                <div class="ean-product-card">
-                  <div class="ean-product-img">🧴</div>
-                  <div class="ean-product-name">Detergente Ypê</div>
-                  <div class="ean-product-brand">Ypê — 500ml</div>
-                  <div class="ean-product-ean">7891910000197</div>
-                  <div class="ean-match-badge">✓ Encontrado no BD</div>
+          <!-- BUSCA EAN -->
+          <div class="m-screen" id="scr-ean">
+            <div class="ean-screen">
+              <div class="ean-bar"><input value="7891910000197" readonly><button>BUSCAR EAN</button></div>
+              <div class="ean-grid">
+                <div class="ean-card">
+                  <span class="emoji">🧴</span>
+                  <div class="pname">Detergente Ypê</div>
+                  <div class="pbrand">Ypê — 500ml</div>
+                  <div class="pean">7891910000197</div>
+                  <div class="found-badge">✓ Encontrado no BD</div>
                 </div>
-                <div class="ean-details">
-                  <div class="ean-detail-row"><span class="ean-detail-label">Preço Tabela</span><span class="ean-detail-value green">R$ 3,49</span></div>
-                  <div class="ean-detail-row"><span class="ean-detail-label">Estoque</span><span class="ean-detail-value blue">142 un.</span></div>
-                  <div class="ean-detail-row"><span class="ean-detail-label">Categoria</span><span class="ean-detail-value">Limpeza</span></div>
-                  <div class="ean-detail-row"><span class="ean-detail-label">NCM</span><span class="ean-detail-value orange">3402.20.00</span></div>
-                  <div class="ean-detail-row"><span class="ean-detail-label">Último Cadastro</span><span class="ean-detail-value">12/02/2025</span></div>
-                  <div class="ean-log">
-                    <div class="ean-log-line"><span class="time">[14:32:01]</span> <span class="info">QUERY</span> SELECT * FROM pdv_estoque WHERE ean = '7891910000197'</div>
-                    <div class="ean-log-line"><span class="time">[14:32:01]</span> <span class="ok">200 OK</span> — 1 resultado encontrado em 12ms</div>
-                    <div class="ean-log-line"><span class="time">[14:32:02]</span> <span class="ai">IA</span> Categoria auto-detectada: Limpeza (conf: 94.2%)</div>
-                    <div class="ean-log-line"><span class="time">[14:32:02]</span> <span class="info">JOIN</span> pdv_estoque ⟷ preco_tabela via preco_id</div>
-                    <div class="ean-log-line"><span class="time">[14:32:02]</span> <span class="ok">SYNC</span> Ícone gerado via API de IA — 🧴</div>
+                <div class="ean-info">
+                  <div class="ean-row"><span class="elabel">Preço Tabela</span><span class="evalue eg">R$ 3,49</span></div>
+                  <div class="ean-row"><span class="elabel">Estoque</span><span class="evalue eb">142 un.</span></div>
+                  <div class="ean-row"><span class="elabel">Categoria</span><span class="evalue">Limpeza</span></div>
+                  <div class="ean-row"><span class="elabel">NCM</span><span class="evalue eo">3402.20.00</span></div>
+                  <div class="ean-row"><span class="elabel">Último Cadastro</span><span class="evalue">12/02/2025</span></div>
+                  <div class="ean-terminal">
+                    <div class="tl"><span class="t">[14:32:01]</span> <span class="b">QUERY</span> SELECT * FROM pdv_estoque WHERE ean = '7891910000197'</div>
+                    <div class="tl"><span class="t">[14:32:01]</span> <span class="g">200 OK</span> — 1 resultado em 12ms</div>
+                    <div class="tl"><span class="t">[14:32:02]</span> <span class="p">IA</span> Categoria auto-detectada: Limpeza (conf: 94.2%)</div>
+                    <div class="tl"><span class="t">[14:32:02]</span> <span class="b">JOIN</span> pdv_estoque ⟷ preco_tabela via preco_id</div>
+                    <div class="tl"><span class="t">[14:32:02]</span> <span class="g">SYNC</span> Ícone gerado via API de IA — 🧴</div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- SCREEN 4: Geração de Ícones -->
-          <div class="mockup-content" id="screen-icons">
-            <div class="ai-icons-screen">
-              <div class="icons-header">
+          <!-- ÍCONES IA -->
+          <div class="m-screen" id="scr-icons">
+            <div class="icons-screen">
+              <div class="icons-top">
                 <h3>Geração Automática de Ícones</h3>
-                <div class="gen-badge">✦ Powered by IA — 48 ícones gerados hoje</div>
+                <div class="ai-powered">✦ Powered by IA — 48 ícones hoje</div>
               </div>
               <div class="icons-grid">
-                <div class="icon-card"><div class="check-badge">✓</div><div class="generated-icon" style="background:linear-gradient(135deg,#1a2a1a,#0a1a0a)">🥤</div><div class="icon-name">Refrigerante</div><div class="icon-status">gerado em 1.2s</div></div>
-                <div class="icon-card"><div class="check-badge">✓</div><div class="generated-icon" style="background:linear-gradient(135deg,#2a2a1a,#1a1a0a)">🍞</div><div class="icon-name">Padaria</div><div class="icon-status">gerado em 0.8s</div></div>
-                <div class="icon-card"><div class="check-badge">✓</div><div class="generated-icon" style="background:linear-gradient(135deg,#1a1a2a,#0a0a1a)">🧀</div><div class="icon-name">Laticínios</div><div class="icon-status">gerado em 1.1s</div></div>
-                <div class="icon-card"><div class="check-badge">✓</div><div class="generated-icon" style="background:linear-gradient(135deg,#2a1a1a,#1a0a0a)">🍎</div><div class="icon-name">Frutas</div><div class="icon-status">gerado em 0.9s</div></div>
-                <div class="icon-card"><div class="check-badge">✓</div><div class="generated-icon" style="background:linear-gradient(135deg,#1a2a2a,#0a1a1a)">🥛</div><div class="icon-name">Bebidas Lácteas</div><div class="icon-status">gerado em 1.3s</div></div>
-                <div class="icon-card"><div class="check-badge">✓</div><div class="generated-icon" style="background:linear-gradient(135deg,#2a2a2a,#1a1a1a)">🍚</div><div class="icon-name">Grãos</div><div class="icon-status">gerado em 0.7s</div></div>
-                <div class="icon-card"><div class="check-badge">✓</div><div class="generated-icon" style="background:linear-gradient(135deg,#1a1a1e,#0a0a12)">🧴</div><div class="icon-name">Limpeza</div><div class="icon-status">gerado em 1.0s</div></div>
-                <div class="icon-card"><div class="check-badge">✓</div><div class="generated-icon" style="background:linear-gradient(135deg,#2a1a2a,#1a0a1a)">🧃</div><div class="icon-name">Sucos</div><div class="icon-status">gerado em 0.6s</div></div>
+                <div class="icon-item"><div class="check">✓</div><div class="ic-emoji">🥤</div><div class="ic-name">Refrigerante</div><div class="ic-time">1.2s</div></div>
+                <div class="icon-item"><div class="check">✓</div><div class="ic-emoji">🍞</div><div class="ic-name">Padaria</div><div class="ic-time">0.8s</div></div>
+                <div class="icon-item"><div class="check">✓</div><div class="ic-emoji">🧀</div><div class="ic-name">Laticínios</div><div class="ic-time">1.1s</div></div>
+                <div class="icon-item"><div class="check">✓</div><div class="ic-emoji">🍎</div><div class="ic-name">Frutas</div><div class="ic-time">0.9s</div></div>
+                <div class="icon-item"><div class="check">✓</div><div class="ic-emoji">🥛</div><div class="ic-name">Bebidas</div><div class="ic-time">1.3s</div></div>
+                <div class="icon-item"><div class="check">✓</div><div class="ic-emoji">🍚</div><div class="ic-name">Grãos</div><div class="ic-time">0.7s</div></div>
+                <div class="icon-item"><div class="check">✓</div><div class="ic-emoji">🧴</div><div class="ic-name">Limpeza</div><div class="ic-time">1.0s</div></div>
+                <div class="icon-item"><div class="check">✓</div><div class="ic-emoji">🧃</div><div class="ic-name">Sucos</div><div class="ic-time">0.6s</div></div>
               </div>
-              <div class="icons-api-log">
-                <div class="log-title">API Log — Últimas requisições</div>
-                <div class="api-call"><span class="method">POST</span> <span class="endpoint">/api/v1/ai/generate-icon</span> → <span class="status-ok">200</span> <span class="ms">1.2s</span> — Refrigerante</div>
-                <div class="api-call"><span class="method">POST</span> <span class="endpoint">/api/v1/ai/generate-icon</span> → <span class="status-ok">200</span> <span class="ms">0.8s</span> — Padaria</div>
-                <div class="api-call"><span class="method">POST</span> <span class="endpoint">/api/v1/ai/generate-icon</span> → <span class="status-ok">200</span> <span class="ms">1.1s</span> — Laticínios</div>
-                <div class="api-call"><span class="method">POST</span> <span class="endpoint">/api/v1/ai/generate-icon</span> → <span class="status-ok">200</span> <span class="ms">0.9s</span> — Frutas</div>
-                <div class="api-call"><span class="method">POST</span> <span class="endpoint">/api/v1/ai/generate-icon</span> → <span class="status-ok">200</span> <span class="ms">1.3s</span> — Bebidas Lácteas</div>
+              <div class="api-log">
+                <div class="log-h">API Log — Últimas requisições</div>
+                <div class="apil"><span class="method">POST</span> <span class="ep">/api/v1/ai/generate-icon</span> → <span class="ok">200</span> <span class="ms">1.2s</span> — Refrigerante</div>
+                <div class="apil"><span class="method">POST</span> <span class="ep">/api/v1/ai/generate-icon</span> → <span class="ok">200</span> <span class="ms">0.8s</span> — Padaria</div>
+                <div class="apil"><span class="method">POST</span> <span class="ep">/api/v1/ai/generate-icon</span> → <span class="ok">200</span> <span class="ms">1.1s</span> — Laticínios</div>
+                <div class="apil"><span class="method">POST</span> <span class="ep">/api/v1/ai/generate-icon</span> → <span class="ok">200</span> <span class="ms">0.9s</span> — Frutas</div>
               </div>
             </div>
           </div>
-
         </div>
       </div>
-
     </div>
   </section>
 
   <!-- SKILLS -->
   <section id="skills">
     <div class="container">
-      <div class="section-header reveal"><div class="section-label">// habilidades técnicas</div><h2 class="section-title">Stack &amp; Competências</h2></div>
-      <div class="skills-grid">
-        <div class="skill-group reveal">
-          <h3><span style="color:var(--accent)">›</span> Suporte &amp; Infraestrutura</h3>
-          <ul class="skill-list"><li>Suporte N1 (HW/SW)</li><li>Infraestrutura de Redes</li><li>Cabeamento Estruturado</li><li>Monitoramento de Rede</li><li>Gestão de Chamados</li><li>Treinamento de Equipes</li><li>Resolução de Incidentes</li></ul>
+      <div class="section-header reveal">
+        <div class="section-eyebrow"><span class="line"></span> Habilidades Técnicas</div>
+        <h2 class="section-title">Stack & Competências</h2>
+      </div>
+
+      <div class="skills-layout">
+        <div class="skill-card sc-green reveal">
+          <h3><span style="color:var(--accent)">◆</span> Suporte & Infraestrutura</h3>
+          <div class="skill-tags">
+            <span class="skill-tag st-green">Suporte N1 (HW/SW)</span>
+            <span class="skill-tag st-green">Infraestrutura de Redes</span>
+            <span class="skill-tag st-green">Cabeamento Estruturado</span>
+            <span class="skill-tag st-green">Monitoramento de Rede</span>
+            <span class="skill-tag st-green">Gestão de Chamados</span>
+            <span class="skill-tag st-green">Treinamento de Equipes</span>
+            <span class="skill-tag st-green">Resolução de Incidentes</span>
+          </div>
         </div>
-        <div class="skill-group reveal">
-          <h3><span style="color:var(--accent-blue)">›</span> Linguagens &amp; Frameworks</h3>
-          <ul class="skill-list"><li>PHP</li><li>JavaScript</li><li>SQL / PostgreSQL</li><li>Java</li><li>Python</li><li>HTML / CSS</li><li>.NET (aprimorando)</li><li>Apache</li></ul>
+
+        <div class="skill-card sc-blue reveal">
+          <h3><span style="color:var(--accent2)">◆</span> Linguagens & Dev</h3>
+          <div class="skill-tags">
+            <span class="skill-tag st-blue">PHP</span>
+            <span class="skill-tag st-blue">JavaScript</span>
+            <span class="skill-tag st-blue">SQL / PostgreSQL</span>
+            <span class="skill-tag st-blue">Java</span>
+            <span class="skill-tag st-blue">Python</span>
+            <span class="skill-tag st-blue">HTML / CSS</span>
+            <span class="skill-tag st-blue">.NET (aprimorando)</span>
+            <span class="skill-tag st-blue">Apache</span>
+          </div>
         </div>
-        <div class="skill-group reveal">
-          <h3><span style="color:var(--accent-purple)">›</span> Conceitos &amp; Ferramentas</h3>
-          <ul class="skill-list"><li>Arquitetura Multi-Tenant</li><li>APIs REST</li><li>Inteligência Artificial</li><li>Modelagem de Dados</li><li>SaaS</li><li>Git</li><li>SOC (Security Ops)</li></ul>
+
+        <div class="skill-card sc-purple reveal">
+          <h3><span style="color:var(--accent3)">◆</span> Conceitos & Ferramentas</h3>
+          <div class="skill-tags">
+            <span class="skill-tag st-purple">Arquitetura Multi-Tenant</span>
+            <span class="skill-tag st-purple">APIs REST</span>
+            <span class="skill-tag st-purple">Inteligência Artificial</span>
+            <span class="skill-tag st-purple">Modelagem de Dados</span>
+            <span class="skill-tag st-purple">SaaS</span>
+            <span class="skill-tag st-purple">Git</span>
+            <span class="skill-tag st-purple">SOC (Security Ops)</span>
+          </div>
         </div>
       </div>
-      <div class="cert-grid reveal">
-        <div class="cert-card"><div class="cert-icon icon-blue">🛡️</div><div class="cert-info"><h4>SOC Analyst Foundations</h4><p>Monitoramento de segurança e análise de incidentes</p><div class="cert-issuer">IBSEC</div></div></div>
-        <div class="cert-card"><div class="cert-icon icon-orange">🌐</div><div class="cert-info"><h4>Arquitetura de Redes</h4><p>Planejamento e implementação de infraestrutura</p><div class="cert-issuer">IBSEC</div></div></div>
-        <div class="cert-card"><div class="cert-icon icon-purple">☕</div><div class="cert-info"><h4>Java Foundations</h4><p>Programação orientada a objetos</p><div class="cert-issuer">Oracle Academy</div></div></div>
+
+      <div class="certs-row reveal">
+        <div class="cert-card-v2"><div class="cc-icon" style="background:#a78bfa15;border:1px solid #a78bfa25">🛡️</div><div class="cc-info"><h4>SOC Analyst Foundations</h4><p>Monitoramento de segurança e análise de incidentes</p><div class="issuer">IBSEC</div></div></div>
+        <div class="cert-card-v2"><div class="cc-icon" style="background:#5b8aff15;border:1px solid #5b8aff25">🌐</div><div class="cc-info"><h4>Arquitetura de Redes</h4><p>Planejamento e implementação de infraestrutura</p><div class="issuer">IBSEC</div></div></div>
+        <div class="cert-card-v2"><div class="cc-icon" style="background:#f9731615;border:1px solid #f9731625">☕</div><div class="cc-info"><h4>Java Foundations</h4><p>Programação orientada a objetos</p><div class="issuer">Oracle Academy</div></div></div>
       </div>
     </div>
   </section>
@@ -578,18 +1177,18 @@
   <!-- CONTATO -->
   <section id="contato" class="contact-section">
     <div class="container reveal">
-      <h2>Vamos <span style="color:var(--accent)">conversar?</span></h2>
+      <h2>Vamos <span class="gradient">conversar?</span></h2>
       <p>Aberto a oportunidades como Analista de Suporte, Infraestrutura e áreas correlatas.</p>
-      <div class="contact-links">
-        <a href="mailto:kadu.corpti@gmail.com" class="contact-link">
+      <div class="contact-row">
+        <a href="mailto:kadu.corpti@gmail.com" class="c-link">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
           kadu.corpti@gmail.com
         </a>
-        <a href="tel:+5519982210518" class="contact-link">
+        <a href="tel:+5519982210518" class="c-link">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           (19) 98221-0518
         </a>
-        <a href="https://github.com/SEU-USUARIO" target="_blank" class="contact-link">
+        <a href="https://github.com/SEU-USUARIO" target="_blank" class="c-link">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
           GitHub
         </a>
@@ -597,48 +1196,148 @@
     </div>
   </section>
 
-  <footer><div class="container"><p>© 2025 Carlos Eduardo Costa Coelho — Desenvolvido com dedicação.</p></div></footer>
+  <footer><div class="container"><p>© 2025 Carlos Eduardo Costa Coelho — Feito com código, café e dedicação.</p></div></footer>
 
   <script>
-    // Nav
-    const nav = document.getElementById('navbar');
-    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40));
+    // ── SCROLL PROGRESS ──
+    window.addEventListener('scroll', () => {
+      const h = document.documentElement.scrollHeight - window.innerHeight;
+      document.getElementById('scrollProgress').style.width = (window.scrollY / h * 100) + '%';
+      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
+    });
 
-    // Reveal
-    const observer = new IntersectionObserver((entries) => {
+    // ── REVEAL ──
+    const obs = new IntersectionObserver(entries => {
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-    // Mockup tabs
-    const urls = { pdv: 'https://app.kadupdv.com.br/vendas', cadastro: 'https://app.kadupdv.com.br/produtos/cadastro-ia', ean: 'https://app.kadupdv.com.br/produtos/busca-ean', icons: 'https://app.kadupdv.com.br/admin/ai-icons' };
+    // ── ANIMATED COUNTERS ──
+    const counterObs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        e.target.querySelectorAll('[data-count]').forEach(el => {
+          const target = +el.dataset.count;
+          let current = 0;
+          const step = () => {
+            current += Math.ceil(target / 20);
+            if (current >= target) { el.textContent = target; return; }
+            el.textContent = current;
+            requestAnimationFrame(step);
+          };
+          step();
+        });
+        counterObs.unobserve(e.target);
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('.stats-bar').forEach(el => counterObs.observe(el));
 
-    document.querySelectorAll('.mockup-tab').forEach(tab => {
+    // ── TERMINAL ANIMATION ──
+    const lines = [
+      { type: 'cmd', text: 'whoami' },
+      { type: 'out', text: 'Carlos Eduardo Costa Coelho' },
+      { type: 'out', text: '<span class="term-highlight">Analista de Suporte</span> & <span class="term-accent">Desenvolvedor</span>' },
+      { type: 'br' },
+      { type: 'cmd', text: 'cat skills.json' },
+      { type: 'out', text: '<span class="term-highlight">suporte_n1</span>  <span class="term-accent">redes</span>  <span class="term-warn">php</span>  <span class="term-success">postgresql</span>' },
+      { type: 'out', text: '<span class="term-highlight">java</span>  <span class="term-accent">python</span>  <span class="term-warn">javascript</span>  <span class="term-success">.net</span>' },
+      { type: 'br' },
+      { type: 'cmd', text: 'status --projects' },
+      { type: 'out', text: '<span class="term-success">●</span> PDV SaaS .......... <span class="term-success">em produção</span>' },
+      { type: 'out', text: '<span class="term-success">●</span> Cadastro IA ....... <span class="term-success">operacional</span>' },
+      { type: 'out', text: '<span class="term-success">●</span> Busca EAN IA ...... <span class="term-success">operacional</span>' },
+      { type: 'out', text: '<span class="term-success">●</span> Gerador Ícones .... <span class="term-success">operacional</span>' },
+      { type: 'br' },
+      { type: 'cmd', text: 'echo $DISPONIVEL' },
+      { type: 'out', text: '<span class="term-success">true</span> — aberto a novas oportunidades' },
+    ];
+
+    const term = document.getElementById('terminal');
+    let lineIdx = 0;
+
+    function typeTerminal() {
+      if (lineIdx >= lines.length) {
+        const cursor = document.createElement('span');
+        cursor.innerHTML = '<br><span class="term-prompt">kadu@portfolio:~$</span> <span class="term-cursor"></span>';
+        term.appendChild(cursor);
+        return;
+      }
+      const l = lines[lineIdx];
+      const div = document.createElement('div');
+      div.className = 'term-line';
+      div.style.animationDelay = '0s';
+
+      if (l.type === 'br') {
+        div.innerHTML = '&nbsp;';
+      } else if (l.type === 'cmd') {
+        div.innerHTML = '<span class="term-prompt">kadu@portfolio:~$</span> <span class="term-cmd">' + l.text + '</span>';
+      } else {
+        div.innerHTML = '<span class="term-output">' + l.text + '</span>';
+      }
+
+      term.appendChild(div);
+      lineIdx++;
+      setTimeout(typeTerminal, l.type === 'cmd' ? 600 : l.type === 'br' ? 200 : 300);
+    }
+
+    setTimeout(typeTerminal, 800);
+
+    // ── MOCKUP TABS ──
+    const mUrls = { pdv:'https://app.kadupdv.com.br/vendas', cadastro:'https://app.kadupdv.com.br/produtos/cadastro-ia', ean:'https://app.kadupdv.com.br/produtos/busca-ean', icons:'https://app.kadupdv.com.br/admin/ai-icons' };
+    document.querySelectorAll('.m-tab').forEach(tab => {
       tab.addEventListener('click', function() {
         const id = this.dataset.screen;
-        document.querySelectorAll('.mockup-content').forEach(s => s.classList.remove('active'));
-        document.querySelectorAll('.mockup-tab').forEach(t => t.classList.remove('active'));
-        document.getElementById('screen-' + id).classList.add('active');
-        document.getElementById('mockup-url-text').textContent = urls[id];
+        document.querySelectorAll('.m-screen').forEach(s => s.classList.remove('active'));
+        document.querySelectorAll('.m-tab').forEach(t => t.classList.remove('active'));
+        document.getElementById('scr-' + id).classList.add('active');
+        document.getElementById('mUrl').textContent = mUrls[id];
         this.classList.add('active');
       });
     });
 
-    // Generate barcode
-    function generateBarcode(containerId) {
-      const c = document.getElementById(containerId);
+    // ── BARCODE ──
+    function genBarcode(id) {
+      const c = document.getElementById(id);
       if (!c) return;
-      const pattern = [3,1,1,2,3,1,2,1,1,3,2,1,1,2,1,3,1,1,2,3,1,2,1,1,3,2,1,1,2,1,3,1,2,1,1,3,2,1,2,1,1,3,1,2,3,1,1,2,1,3,2,1,1,2,3,1,1,2,1,3];
-      pattern.forEach((w, i) => {
-        const bar = document.createElement('div');
-        bar.className = 'bar';
-        bar.style.height = (30 + Math.random() * 20) + 'px';
-        bar.style.width = w + 'px';
-        bar.style.opacity = i % 2 === 0 ? '1' : '0.3';
-        c.appendChild(bar);
+      const p = [3,1,1,2,3,1,2,1,1,3,2,1,1,2,1,3,1,1,2,3,1,2,1,1,3,2,1,1,2,1,3,1,2,1,1,3,2,1,2,1,1,3,1,2,3,1,1,2,1,3,2,1,1,2,3,1,1,2,1,3];
+      p.forEach((w,i) => {
+        const b = document.createElement('div');
+        b.className = 'b';
+        b.style.height = (28 + Math.random() * 16) + 'px';
+        b.style.width = w + 'px';
+        b.style.opacity = i % 2 === 0 ? '1' : '0.25';
+        c.appendChild(b);
       });
     }
-    generateBarcode('barcode-1');
+    genBarcode('bc1');
+
+    // ── COMMAND PALETTE ──
+    function openCmd() {
+      document.getElementById('cmdOverlay').classList.add('open');
+      document.getElementById('cmdInput').focus();
+    }
+    function closeCmd() { document.getElementById('cmdOverlay').classList.remove('open'); }
+
+    document.addEventListener('keydown', e => {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') { e.preventDefault(); openCmd(); }
+      if (e.key === 'Escape') closeCmd();
+    });
+
+    document.getElementById('cmdOverlay').addEventListener('click', e => {
+      if (e.target === e.currentTarget) closeCmd();
+    });
+
+    document.getElementById('cmdInput').addEventListener('input', function() {
+      const q = this.value.toLowerCase();
+      document.querySelectorAll('.cmd-item').forEach(item => {
+        const text = item.textContent.toLowerCase();
+        item.style.display = text.includes(q) ? 'flex' : 'none';
+      });
+    });
+
+    document.querySelectorAll('.cmd-item').forEach(item => {
+      item.addEventListener('click', () => closeCmd());
+    });
   </script>
 </body>
 </html>
